@@ -14,10 +14,10 @@
 
     <hr class="w-1px h-full bg-warm-gray-200" />
 
-    <a href="https://twitter.com/zernonia" class="p-3 bg-opacity-50 bg-warm-gray-200 rounded-lg">
+    <a href="https://twitter.com/zernonia" target="_blank" class="p-3 bg-opacity-50 bg-warm-gray-200 rounded-lg">
       <IconTwitter class="text-warm-gray-500"></IconTwitter>
     </a>
-    <a href="https://github.com/zernonia" class="p-3 bg-opacity-50 bg-warm-gray-200 rounded-lg">
+    <a href="https://github.com/zernonia" target="_blank" class="p-3 bg-opacity-50 bg-warm-gray-200 rounded-lg">
       <IconGithub class="text-warm-gray-500"></IconGithub>
     </a>
 
