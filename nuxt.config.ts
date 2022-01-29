@@ -4,4 +4,7 @@ import { defineNuxtConfig } from "nuxt3"
 export default defineNuxtConfig({
   css: ["@/assets/styles.css"],
   buildModules: ["nuxt-windicss"],
+  privateRuntimeConfig: {
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+  },
 })
