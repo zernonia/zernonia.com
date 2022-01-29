@@ -1,5 +1,5 @@
 <template>
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <svg width="auto" height="auto" viewBox="0 0 24 24" fill="none">
     <path
       d="M8 20C8 19.4477 8.44772 19 9 19H15C15.5523 19 16 19.4477 16 20V21C16 22.6569 14.6569 24 13 24H11C9.34315 24 8 22.6569 8 21V20Z"
       fill="currentColor"
