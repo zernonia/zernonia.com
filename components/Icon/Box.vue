@@ -1,5 +1,5 @@
 <template>
-  <svg width="auto" height="auto" viewBox="0 0 24 24">
+  <svg width="1em" height="1em" viewBox="0 0 24 24">
     <path
       d="M20.23 7.24L12 12L3.77 7.24a1.98 1.98 0 0 1 .7-.71L11 2.76c.62-.35 1.38-.35 2 0l6.53 3.77c.29.173.531.418.7.71z"
       opacity=".25"
