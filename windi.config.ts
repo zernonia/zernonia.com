@@ -1,12 +1,4 @@
 import { defineConfig } from "windicss/helpers"
-import colors from "windicss/colors"
-
-const conicGradient = (theme, direction, colorList) => {
-  const params = [direction, ...colorList.map((color) => theme(`colors.${color}`))]
-
-  return `conic-gradient(${params.join(", ")})`
-}
-
 export default defineConfig({
   theme: {
     extend: {
@@ -38,4 +30,5 @@ export default defineConfig({
       },
     },
   },
+  plugins: [require("windicss/plugin/typography")],
 })
