@@ -2,7 +2,7 @@
 import { DevToPost } from "@/interface"
 const route = useRoute()
 
-const { data } = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
+const { data } = useLazyAsyncData(`blog-${route.params.slug}`, () =>
   $fetch<DevToPost>(`/api/devto/${route.params.slug}`)
 )
 </script>
