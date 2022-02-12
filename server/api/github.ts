@@ -1,7 +1,8 @@
 import axios from "axios"
+import type { IncomingMessage, ServerResponse } from "http"
 const token = process.env.GITHUB_TOKEN
 
-export default async (req, res) => {
+export default async (req: IncomingMessage, res: ServerResponse) => {
   return await repoD("zernonia")
 }
 
