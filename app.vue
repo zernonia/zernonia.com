@@ -7,11 +7,10 @@ import IconGithub from "~icons/feather/github"
     <div class="max-w-screen-lg w-full relative p-8 flex flex-col items-center justify-between">
       <div class="w-full flex justify-end">
         <nav class="flex space-x-6 items-center text-lg font-space">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/project">Project</a>
-          <a href="/blog">Blog</a>
-          <a href="/fun">Fun</a>
+          <NuxtLink to="/">Home</NuxtLink>
+          <NuxtLink to="/about">About</NuxtLink>
+          <NuxtLink to="/project">Project</NuxtLink>
+          <NuxtLink to="/blog">Blog</NuxtLink>
         </nav>
       </div>
       <NuxtPage />

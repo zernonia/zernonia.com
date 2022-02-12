@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { DevTo } from "@/interface"
 
-const { data } = await useLazyAsyncData("blog", () => $fetch<DevTo>("/api/devto"))
+const { data } = useLazyAsyncData("blog", () => $fetch<DevTo>("/api/devto"))
 const latestPost = computed(() => data.value?.data[0])
 const otherPost = computed(() => data.value?.data.slice(1))
 const tagList = computed(() => {
