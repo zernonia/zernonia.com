@@ -9,7 +9,7 @@ import IconArrow from "~icons/feather/arrow-right"
       <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px" class="mx-2" />
       I am
     </p>
-    <h1 class="text-8xl font-bold my-4 tracking-tight font-space">Supabase</h1>
+    <h1 class="text-8xl font-bold my-4 tracking-tight font-space">Zernonia</h1>
     <p class="mt-6 text-xl text-gray-500 tracking-wide">Frontend Developer | IndieHacker wannabe</p>
 
     <button class="group mt-24">
