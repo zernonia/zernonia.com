@@ -4,14 +4,14 @@ const token = process.env.GITHUB_TOKEN
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   const { pathname } = new URL(req.url!, "https://example.org/")
-  const id = pathname.split("/")[1]
+  const slug = pathname.split("/")[1]
 
-  if (id) {
+  if (slug) {
     try {
       const response = await axios({
         method: "get",
-        url: `https://dev.to/api/articles/${id}`,
-        headers: { "User-Agent": "Tuhin", Authorization: "Bearer " + token },
+        url: `https://dev.to/api/articles/zernonia/${slug}`,
+        headers: { Authorization: "Bearer " + token },
       })
       return { data: response.data }
     } catch (err) {
@@ -23,7 +23,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
       const response = await axios({
         method: "get",
         url: "https://dev.to/api/articles?username=zernonia",
-        headers: { "User-Agent": "Tuhin", Authorization: "Bearer " + token },
+        headers: { Authorization: "Bearer " + token },
       })
       return { data: response.data }
     } catch (err) {
