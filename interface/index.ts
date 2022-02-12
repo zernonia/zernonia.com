@@ -1,3 +1,4 @@
 import { DevTo } from "./devto"
+import { DevToPost } from "./devto-post"
 
-export { DevTo }
+export { DevTo, DevToPost }
