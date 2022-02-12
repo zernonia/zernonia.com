@@ -28,6 +28,16 @@ export default defineConfig({
           },
         },
       },
+      typography: {
+        lg: {
+          css: {
+            h2: {
+              fontSize: "2.4rem",
+              fontWeight: "600",
+            },
+          },
+        },
+      },
     },
   },
   plugins: [require("windicss/plugin/typography")],
