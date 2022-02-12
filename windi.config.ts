@@ -13,26 +13,28 @@ export default defineConfig({
       fontFamily: {
         space: ["Space Grotesk", "sans-serif"],
       },
-      colors: {
-        amber: colors.amber,
-        lightBlue: colors.lightBlue,
-        rose: colors.rose,
-        gray: colors.gray,
+      boxShadow: {
+        "inset-white": "inset 0 0 100px 20px #ffffff",
       },
-      backgroundImage: (theme) => ({
-        "conic-gradient": conicGradient(theme, "from 300deg", [
-          "emerald.400",
-          "green.100",
-          "emerald.300",
-          "emerald.700",
-          "green.100",
-          "green.100",
-          "emerald.600",
-          "emerald.400",
-        ]),
-      }),
       animation: {
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        blob: "blob 4s infinite",
+      },
+      keyframes: {
+        blob: {
+          "0%, 100%": {
+            transform: "translate(0, 0) scale(1)",
+          },
+          "25%": {
+            transform: "translate(20px, -30px) scale(1.1)",
+          },
+          "50%": {
+            transform: "translate(0, 40px) scale(1)",
+          },
+          "75%": {
+            transform: "translate(-30px, -25px) scale(0.9)",
+          },
+        },
       },
     },
   },
