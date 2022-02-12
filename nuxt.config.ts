@@ -6,5 +6,6 @@ export default defineNuxtConfig({
   buildModules: ["nuxt-windicss", "unplugin-icons/nuxt"],
   privateRuntimeConfig: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+    DEVTO_APIKEY: process.env.DEVTO_APIKEY,
   },
 })
