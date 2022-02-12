@@ -22,8 +22,10 @@ import IconGithub from "~icons/feather/github"
       </div>
     </footer>
 
-    <Blob class="top-1/10 left-1/20 bg-yellow-200 animate-blob transition animate-delay-1000"></Blob>
-    <Blob class="top-1/4 left-1/4 bg-purple-200 animate-blob transition animate-delay-1000"></Blob>
-    <Blob class="bottom-1/10 right-1/20 bg-blue-300 animate-blob transition animate-delay-1000"></Blob>
+    <div class="-z-10 fixed left-0 top-0 w-screen h-screen">
+      <Blob class="top-1/10 left-1/20 bg-yellow-200 animate-blob transition animate-delay-1000"></Blob>
+      <Blob class="top-1/4 left-1/4 bg-purple-200 animate-blob transition animate-delay-1000"></Blob>
+      <Blob class="bottom-1/10 right-1/20 bg-blue-300 animate-blob transition animate-delay-1000"></Blob>
+    </div>
   </div>
 </template>
