@@ -1,6 +1,6 @@
 import { Client } from "@notionhq/client"
+import { NotionProject } from "@/interface"
 import type { IncomingMessage, ServerResponse } from "http"
-
 const token = process.env.NOTION_TOKEN
 const notion = new Client({ auth: token })
 
@@ -23,19 +23,10 @@ type QueryType = Await<ReturnType<typeof notion.databases.query>>
 type QueryResultType = QueryType["results"][0]
 type ExtractItemType = Extract<QueryResultType, { url: string }>
 
-interface ReturnResult {
-  name: string
-  tags: string[]
-  image: string
-  link: string
-  description: string
-  created_at: Date
-}
-
 const formatResult = (query: QueryType) => {
-  let arr: ReturnResult[] = []
+  let arr: NotionProject[] = []
   query.results.forEach((i: ExtractItemType) => {
-    let t: ReturnResult = {
+    let t: NotionProject = {
       name: "",
       tags: [],
       image: "",
