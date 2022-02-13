@@ -1,3 +1,7 @@
+export interface Project {
+  data: NotionProject[]
+}
+
 export interface NotionProject {
   name: string
   tags: string[]
