@@ -13,7 +13,7 @@ const tagList = computed(() => {
 
 <template>
   <div class="w-full mt-12">
-    <h1 class="font-bold text-7xl font-space">Blog</h1>
+    <h1 class="font-bold text-7xl text-center font-space">Blog</h1>
     <div v-if="!data?.data">Loading...</div>
     <div class="mt-12" v-else>
       <div v-if="latestPost" class="mb-20 rounded-4xl shadow-inset-white">
