@@ -13,6 +13,7 @@
     "unplugin-icons": "^0.13.0"
   },
   "dependencies": {
+    "@notionhq/client": "^0.4.13",
     "axios": "^0.25.0"
   }
 }
