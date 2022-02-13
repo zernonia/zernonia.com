@@ -7,5 +7,6 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
     DEVTO_APIKEY: process.env.DEVTO_APIKEY,
+    NOTION_TOKEN: process.env.NOTION_TOKEN,
   },
 })
