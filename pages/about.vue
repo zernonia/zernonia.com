@@ -46,9 +46,9 @@ const { data, pending } = useLazyAsyncData("github", () => $fetch<Github>("/api/
         <div>
           <h5>Github Stats</h5>
           <ul>
-            <li>Stars: {{ data.total_stars }}</li>
-            <li>Commit: {{ data.total_commits }}</li>
-            <li>Followers: {{ data.followers }}</li>
+            <li>Stars: {{ data?.total_stars ?? 0 }}</li>
+            <li>Commit: {{ data?.total_commits ?? 0 }}</li>
+            <li>Followers: {{ data?.followers ?? 0 }}</li>
           </ul>
         </div>
       </div>
