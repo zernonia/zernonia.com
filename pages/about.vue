@@ -19,12 +19,15 @@ const { data, pending } = useLazyAsyncData("github", () => $fetch<Github>("/api/
 <template>
   <section class="mt-12 w-full flex flex-col items-center">
     <h1 class="font-bold text-7xl text-center font-space">Zernonia</h1>
-    <h2 class="mt-6 text-3xl text-center text-gray-500">Self-taught Frontend Developer <br /></h2>
+    <h2 class="mt-6 text-xl text-center text-gray-500">Self-taught Frontend Developer <br /></h2>
     <div class="mt-12 grid grid-cols-4 gap-10">
       <div class="info text-right">
         <div>
           <h5>Basic</h5>
-          <p>I'm 25 years old, Malaysian Chinese 🇲🇾 so I can speak quite a number of language</p>
+          <p>
+            I'm 25 years old, Malaysian Chinese 🇲🇾 . I can speak quite a number of language, not just progamming
+            language 😂
+          </p>
         </div>
         <div>
           <h5>Contact</h5>
