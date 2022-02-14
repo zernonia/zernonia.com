@@ -5,6 +5,13 @@ const route = useRoute()
 const { data } = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
   $fetch<DevToPost>(`/api/devto/${route.params.slug}`)
 )
+
+definePageMeta({
+  pageTransition: {
+    name: "fade",
+    mode: "out-in",
+  },
+})
 </script>
 
 <template>

@@ -9,6 +9,13 @@ const tagList = computed(() => {
   data.value?.data.forEach((post) => tags.push(...post.tag_list))
   return [...new Set(tags)]
 })
+
+definePageMeta({
+  pageTransition: {
+    name: "fade",
+    mode: "out-in",
+  },
+})
 </script>
 
 <template>

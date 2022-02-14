@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import IconArrow from "~icons/feather/arrow-right"
 import GifWave from "@/assets/wave.gif"
+
+definePageMeta({
+  pageTransition: {
+    name: "fade",
+    mode: "out-in",
+  },
+})
 </script>
 
 <template>

@@ -14,6 +14,13 @@ import IconGithub from "~icons/simple-icons/github"
 import IconArrow from "~icons/feather/arrow-right"
 
 const { data, pending } = useLazyAsyncData("github", () => $fetch<Github>("/api/github"))
+
+definePageMeta({
+  pageTransition: {
+    name: "fade",
+    mode: "out-in",
+  },
+})
 </script>
 
 <template>

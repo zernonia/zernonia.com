@@ -3,6 +3,13 @@ import { Project } from "@/interface"
 import IconArrow from "~icons/feather/arrow-right"
 
 const { data } = useLazyAsyncData("project", () => $fetch<Project>("/api/notion"))
+
+definePageMeta({
+  pageTransition: {
+    name: "fade",
+    mode: "out-in",
+  },
+})
 </script>
 
 <template>
