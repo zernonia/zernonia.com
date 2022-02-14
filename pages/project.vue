@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Project } from "@/interface"
+import IconArrow from "~icons/feather/arrow-right"
 
 const { data } = useLazyAsyncData("project", () => $fetch<Project>("/api/notion"))
 </script>
@@ -20,6 +21,12 @@ const { data } = useLazyAsyncData("project", () => $fetch<Project>("/api/notion"
           <p class="mb-4">{{ project.description }}</p>
           <a class="button-next" :href="project.link" target="_blank">Visit</a>
         </div>
+      </div>
+
+      <div class="flex justify-center">
+        <NuxtLink to="/blog" class="button-next group mt-12">
+          Blog <IconArrow class="w-6 h-6 duration transition-all ml-2 group-hover:ml-3" />
+        </NuxtLink>
       </div>
     </div>
   </div>
