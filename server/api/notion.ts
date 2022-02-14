@@ -8,6 +8,12 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   try {
     const response = await notion.databases.query({
       database_id: "2394174cd1d2490dac1697b901d8ef29",
+      sorts: [
+        {
+          property: "created_at",
+          direction: "descending",
+        },
+      ],
     })
     if (response.results) {
       return { data: formatResult(response) }
