@@ -19,47 +19,48 @@ const { data, pending } = useLazyAsyncData("github", () => $fetch<Github>("/api/
 <template>
   <section class="mt-12 w-full flex flex-col items-center">
     <h1 class="font-bold text-7xl text-center font-space">Zernonia</h1>
-    <h2 class="mt-6 text-xl text-center text-gray-500">Self-taught Frontend Developer <br /></h2>
-    <div class="mt-12 grid grid-cols-4 gap-10">
-      <div class="info text-right">
-        <div>
-          <h5>Basic</h5>
-          <p>
-            I'm 25 years old, Malaysian Chinese 🇲🇾 . I can speak quite a number of language, not just progamming
-            language 😂
-          </p>
+    <h2 class="mt-6 text-2xl text-center text-gray-500">Self-taught Frontend Developer <br /></h2>
+    <div class="mt-12 px-12 py-24 shadow-inset-white rounded-4xl flex flex-col items-center">
+      <div class="grid grid-cols-4 gap-6">
+        <div class="info text-right">
+          <div>
+            <h5>Basic</h5>
+            <p>
+              I'm 25 years old, Malaysian Chinese 🇲🇾 . I can speak quite a number of language, not just progamming
+              language 😂
+            </p>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>Kuala Lumpur, Malaysia</li>
+              <li>zernonia@gmail.com</li>
+              <li class="text-gray-300 gap-4 text-3xl flex justify-end mt-4"><IconTwitter /><IconGithub /></li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h5>Contact</h5>
-          <ul>
-            <li>Kuala Lumpur, Malaysia</li>
-            <li>zernonia@gmail.com</li>
-            <li class="text-gray-300 gap-4 text-3xl flex justify-end mt-4"><IconTwitter /><IconGithub /></li>
-          </ul>
+        <img :src="Avatar" alt="Zernonia" class="rounded-4xl col-span-2" />
+        <div class="info">
+          <div>
+            <h5>Language/Framework</h5>
+            <p class="text-gray-300 grid grid-cols-[repeat(auto-fill,minmax(15%,36px))] gap-4 text-3xl">
+              <IconVue /><IconNuxt /><IconTypescript /><IconVite /><IconTailwind /><IconPostgres /><IconSupabase />
+            </p>
+          </div>
+          <div>
+            <h5>Github Stats</h5>
+            <ul>
+              <li>Stars: {{ data?.total_stars ?? 0 }}</li>
+              <li>Commit: {{ data?.total_commits ?? 0 }}</li>
+              <li>Followers: {{ data?.followers ?? 0 }}</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <img :src="Avatar" alt="Zernonia" class="rounded-4xl col-span-2" />
-      <div class="info">
-        <div>
-          <h5>Language/Framework</h5>
-          <p class="text-gray-300 grid grid-cols-[repeat(auto-fill,minmax(15%,36px))] gap-4 text-3xl">
-            <IconVue /><IconNuxt /><IconTypescript /><IconVite /><IconTailwind /><IconPostgres /><IconSupabase />
-          </p>
-        </div>
-        <div>
-          <h5>Github Stats</h5>
-          <ul>
-            <li>Stars: {{ data?.total_stars ?? 0 }}</li>
-            <li>Commit: {{ data?.total_commits ?? 0 }}</li>
-            <li>Followers: {{ data?.followers ?? 0 }}</li>
-          </ul>
-        </div>
-      </div>
+      <NuxtLink to="/project" class="button-next group mt-16">
+        Project <IconArrow class="w-6 h-6 duration transition-all ml-2 group-hover:ml-3" />
+      </NuxtLink>
     </div>
-
-    <NuxtLink to="/project" class="button-next group mt-24">
-      Project <IconArrow class="w-6 h-6 duration transition-all ml-2 group-hover:ml-3" />
-    </NuxtLink>
   </section>
 </template>
 
