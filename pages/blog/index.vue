@@ -12,7 +12,7 @@ const tagList = computed(() => {
 </script>
 
 <template>
-  <div class="w-full mt-12">
+  <div class="w-full">
     <h1 class="font-bold text-7xl text-center font-space">Blog</h1>
     <div v-if="!data?.data">Loading...</div>
     <div class="mt-12" v-else>

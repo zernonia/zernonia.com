@@ -17,7 +17,7 @@ const { data, pending } = useLazyAsyncData("github", () => $fetch<Github>("/api/
 </script>
 
 <template>
-  <section class="mt-12 w-full flex flex-col items-center">
+  <section class="w-full flex flex-col items-center">
     <div class="mt-12 px-8 py-24 shadow-inset-white rounded-4xl flex flex-col items-center">
       <h1 class="font-bold text-7xl text-center font-space">Zernonia</h1>
       <h2 class="mt-4 text-2xl text-center text-gray-500">Self-taught Frontend Developer <br /></h2>
