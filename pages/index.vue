@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import IconArrow from "~icons/feather/arrow-right"
+import GifWave from "@/assets/wave.gif"
 </script>
 
 <template>
   <div class="p-32 max-w-screen-md w-full flex flex-col items-center justify-center rounded-3xl shadow-inset-white">
-    <p class="inline-flex text-center text-2xl text-gray-500 tracking-wide">
+    <p class="inline-flex items-center text-center text-2xl text-gray-500 tracking-wide">
       Hi
-      <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px" class="mx-2" />
+      <img :src="GifWave" class="w-12 mx-2" />
       I am
     </p>
     <h1 class="text-8xl font-bold my-4 tracking-tight font-space">Zernonia</h1>
