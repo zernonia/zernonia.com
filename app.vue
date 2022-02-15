@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { store } from "@/store"
+import { useDark, useToggle } from "@vueuse/core"
+
 const route = useRoute()
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 
 const blob1Class = computed(() => {
   if (store.loading) return "left-1/3 top-1/3 !opacity-0"
@@ -34,31 +38,34 @@ const blob3Class = computed(() => {
 </script>
 
 <template>
-  <div class="w-full min-h-screen flex justify-center">
+  <div
+    class="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-800 dark:text-light-900 transition duration-300"
+  >
     <div class="max-w-screen-lg w-full relative p-8 flex flex-col items-center justify-between">
-      <div class="w-full flex justify-end mb-12">
+      <div class="z-10 w-full flex justify-end mb-12">
         <nav class="flex space-x-6 items-center text-lg font-space">
           <NuxtLink to="/">Home</NuxtLink>
           <NuxtLink to="/about">About</NuxtLink>
           <NuxtLink to="/project">Project</NuxtLink>
           <NuxtLink to="/blog">Blog</NuxtLink>
         </nav>
+        <button @click="toggleDark()">Dark</button>
       </div>
-      <NuxtPage />
-      <Footer />
+      <NuxtPage class="z-10" />
+      <Footer class="z-10" />
 
-      <div class="-z-10 fixed top-0 transform left-1/2 -translate-x-1/2 max-w-screen-lg w-full h-full">
+      <div class="z-0 fixed top-0 transform left-1/2 -translate-x-1/2 max-w-screen-lg w-full h-full">
         <Blob
           :class="blob1Class"
-          class="bg-yellow-200 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-1000"
+          class="bg-yellow-200 dark:bg-yellow-500 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)]"
         ></Blob>
         <Blob
           :class="blob2Class"
-          class="bg-purple-200 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-1000"
+          class="bg-purple-200 dark:bg-purple-700 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-1000"
         ></Blob>
         <Blob
           :class="blob3Class"
-          class="bg-blue-300 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-1000"
+          class="bg-blue-300 dark:bg-blue-700 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-3000"
         ></Blob>
       </div>
     </div>
