@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { store } from "@/store"
 import { useDark, useToggle } from "@vueuse/core"
+import IconLightMode from "~icons/feather/sun"
+import IconDarkMode from "~icons/feather/moon"
 
 const route = useRoute()
 const isDark = useDark()
@@ -42,14 +44,19 @@ const blob3Class = computed(() => {
     class="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-800 dark:text-light-900 transition duration-300"
   >
     <div class="max-w-screen-lg w-full relative p-8 flex flex-col items-center justify-between">
-      <div class="z-10 w-full flex justify-end mb-12">
+      <div class="z-10 w-full flex justify-end items-center mb-12">
         <nav class="flex space-x-6 items-center text-lg font-space">
           <NuxtLink to="/">Home</NuxtLink>
           <NuxtLink to="/about">About</NuxtLink>
           <NuxtLink to="/project">Project</NuxtLink>
           <NuxtLink to="/blog">Blog</NuxtLink>
         </nav>
-        <button @click="toggleDark()">Dark</button>
+        <button class="mt-2 ml-4 text-2xl" @click="toggleDark()">
+          <transition name="fade" mode="out-in">
+            <IconLightMode v-if="isDark"></IconLightMode>
+            <IconDarkMode v-else></IconDarkMode>
+          </transition>
+        </button>
       </div>
       <NuxtPage class="z-10" />
       <Footer class="z-10" />
