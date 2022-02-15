@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { DevTo } from "@/interface"
+import { store } from "@/store"
 
-const { data } = useLazyAsyncData("blog", () => $fetch<DevTo>("/api/devto"))
+const { data, pending } = useLazyAsyncData("blog", () => $fetch<DevTo>("/api/devto"))
 const latestPost = computed(() => data.value?.data[0])
 const otherPost = computed(() => data.value?.data.slice(1))
 const tagList = computed(() => {
@@ -16,6 +17,14 @@ definePageMeta({
     mode: "out-in",
   },
 })
+
+watch(
+  pending,
+  () => {
+    store.loading = pending.value
+  },
+  { immediate: true }
+)
 </script>
 
 <template>

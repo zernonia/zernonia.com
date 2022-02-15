@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { Project } from "@/interface"
+import { store } from "@/store"
 import IconArrow from "~icons/feather/arrow-right"
 
-const { data } = useLazyAsyncData("project", () => $fetch<Project>("/api/notion"))
+const { data, pending } = useLazyAsyncData("project", () => $fetch<Project>("/api/notion"))
 
 definePageMeta({
   pageTransition: {
@@ -10,6 +11,14 @@ definePageMeta({
     mode: "out-in",
   },
 })
+
+watch(
+  pending,
+  (n) => {
+    store.loading = pending.value
+  },
+  { immediate: true }
+)
 </script>
 
 <template>

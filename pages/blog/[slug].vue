@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { DevToPost } from "@/interface"
+import { store } from "@/store"
 const route = useRoute()
 
-const { data } = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
+const { data, pending } = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
   $fetch<DevToPost>(`/api/devto/${route.params.slug}`)
 )
 
@@ -12,6 +13,14 @@ definePageMeta({
     mode: "out-in",
   },
 })
+
+watch(
+  pending,
+  () => {
+    store.loading = pending.value
+  },
+  { immediate: true }
+)
 </script>
 
 <template>

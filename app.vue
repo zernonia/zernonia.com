@@ -1,4 +1,28 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { store } from "@/store"
+
+const blob1Class = computed(() => {
+  if (store.loading) {
+    return "left-1/2 top-1/2"
+  } else {
+    return "top-1/6 left-1/5"
+  }
+})
+const blob2Class = computed(() => {
+  if (store.loading) {
+    return "left-1/2 top-1/2"
+  } else {
+    return "top-1/4 left-1/2"
+  }
+})
+const blob3Class = computed(() => {
+  if (store.loading) {
+    return "bottom-1/4 right-1/4"
+  } else {
+    return "bottom-1/5 -right-1/4"
+  }
+})
+</script>
 
 <template>
   <div class="w-full min-h-screen flex justify-center">
@@ -10,14 +34,24 @@
           <NuxtLink to="/project">Project</NuxtLink>
           <NuxtLink to="/blog">Blog</NuxtLink>
         </nav>
+        {{ store.loading }}
       </div>
       <NuxtPage />
       <Footer />
 
-      <div class="-z-10 fixed left-1/2 top-0 transform -translate-x-1/2 max-w-screen-lg w-full h-full">
-        <Blob class="top-1/10 left-1/20 bg-yellow-200 animate-blob transition animate-delay-1000"></Blob>
-        <Blob class="top-1/4 left-1/4 bg-purple-200 animate-blob transition animate-delay-1000"></Blob>
-        <Blob class="bottom-1/10 right-1/20 bg-blue-300 animate-blob transition animate-delay-1000"></Blob>
+      <div class="-z-10 fixed top-0 transform -translate-x-1/4 max-w-screen-lg w-full h-full">
+        <Blob
+          :class="blob1Class"
+          class="bg-yellow-200 animate-blob transition-all duration-1000 animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-1000"
+        ></Blob>
+        <Blob
+          :class="blob2Class"
+          class="bg-purple-200 animate-blob transition-all duration-1000 animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-1000"
+        ></Blob>
+        <Blob
+          :class="blob3Class"
+          class="bg-blue-300 animate-blob transition-all duration-1000 animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-1000"
+        ></Blob>
       </div>
     </div>
   </div>
