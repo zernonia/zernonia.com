@@ -45,7 +45,7 @@ watch(
         </div>
 
         <div class="flex justify-center">
-          <NuxtLink to="/blog" class="button-next group mt-12">
+          <NuxtLink to="/blog" class="button-next group my-12">
             Blog <IconArrow class="w-6 h-6 duration transition-all ml-2 group-hover:ml-3" />
           </NuxtLink>
         </div>
