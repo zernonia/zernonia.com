@@ -76,7 +76,7 @@ definePageMeta({
   @apply flex flex-col justify-center;
 }
 .info h5 {
-  @apply font-bold text-gray-500 mb-4;
+  @apply font-bold text-gray-500 dark:text-warm-gray-500 mb-4;
 }
 .info p,
 info ul {
