@@ -77,6 +77,6 @@ watch(
 
 <style lang="postcss">
 .tag {
-  @apply px-1 py-1 rounded-xl text-sm opacity-25;
+  @apply px-1 py-1 rounded-xl text-sm opacity-50;
 }
 </style>
