@@ -2,6 +2,7 @@
 import { Project } from "@/interface"
 import { store } from "@/store"
 import IconArrow from "~icons/feather/arrow-right"
+import IconLink from "~icons/feather/external-link"
 
 const { data, pending } = useLazyAsyncData("project", () => $fetch<Project>("/api/notion"))
 
@@ -36,7 +37,10 @@ watch(
           <div class="w-2/5 ml-12">
             <h4 class="text-4xl font-bold font-space mb-4">{{ project.name }}</h4>
             <p class="mb-4">{{ project.description }}</p>
-            <a class="button-next" :href="project.link" target="_blank">Visit</a>
+            <a class="button-next" :href="project.link" target="_blank"
+              >Visit
+              <IconLink class="w-6 h-6 mb-0.5 duration transition-all ml-4 group-hover:ml-3" />
+            </a>
           </div>
         </div>
 
