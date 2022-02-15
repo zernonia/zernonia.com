@@ -48,9 +48,9 @@ watch(
           </NuxtLink>
         </div>
         <ul class="grid grid-cols-2 gap-6">
-          <li class="w-full mb-12 rounded-2xl p-6 shadow-inset-white dark:shadow-none" v-for="post in otherPost">
+          <li class="w-full mb-12 rounded-4xl p-6 shadow-inset-white dark:shadow-none" v-for="post in otherPost">
             <NuxtLink :to="`/blog/${post.slug}`">
-              <img class="w-full h-auto rounded-2xl" :src="post.cover_image" :alt="post.title" />
+              <img class="w-full h-auto rounded-3xl" :src="post.cover_image" :alt="post.title" />
               <div class="p-6 flex flex-col justify-between">
                 <div>
                   <p>{{ post.readable_publish_date }}</p>
