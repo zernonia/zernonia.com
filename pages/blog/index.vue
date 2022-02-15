@@ -33,7 +33,10 @@ watch(
       <h1 v-if="!data?.data" class="font-bold text-7xl text-center font-space">Blog</h1>
       <div v-else>
         <h1 class="font-bold text-7xl text-center font-space">Blog</h1>
-        <div v-if="latestPost" class="mt-12 mb-20 rounded-4xl p-8 shadow-inset-white dark:shadow-none">
+        <div
+          v-if="latestPost"
+          class="mt-12 mb-20 rounded-4xl p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
+        >
           <NuxtLink :to="`/blog/${latestPost.slug}`">
             <img class="rounded-4xl" :src="latestPost.cover_image" :alt="latestPost.title" />
             <div class="p-6">
@@ -48,7 +51,10 @@ watch(
           </NuxtLink>
         </div>
         <ul class="grid grid-cols-2 gap-6">
-          <li class="w-full mb-12 rounded-4xl p-6 shadow-inset-white dark:shadow-none" v-for="post in otherPost">
+          <li
+            class="w-full mb-12 rounded-4xl p-6 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
+            v-for="post in otherPost"
+          >
             <NuxtLink :to="`/blog/${post.slug}`">
               <img class="w-full h-auto rounded-3xl" :src="post.cover_image" :alt="post.title" />
               <div class="p-6 flex flex-col justify-between">
