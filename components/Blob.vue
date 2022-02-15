@@ -6,6 +6,9 @@
 
 <style lang="postcss">
 .blur-blob {
-  @apply absolute -z-10 w-76 h-76 rounded-full opacity-60 mix-blend-hard-light filter blur-3xl;
+  transition-property: top, left, bottom, right, opacity;
+  transition-duration: 2000ms;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  @apply absolute -z-10 w-76 h-76 rounded-full opacity-60  mix-blend-hard-light filter blur-3xl;
 }
 </style>
