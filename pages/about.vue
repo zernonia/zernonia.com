@@ -42,7 +42,14 @@ definePageMeta({
             <ul>
               <li>Kuala Lumpur, Malaysia</li>
               <li>zernonia@gmail.com</li>
-              <li class="text-gray-300 gap-4 text-3xl flex justify-end mt-4"><IconTwitter /><IconGithub /></li>
+              <li class="text-gray-300 gap-4 text-3xl flex justify-end mt-4">
+                <a href="https://twitter.com/zernonia" target="_blank">
+                  <IconTwitter />
+                </a>
+                <a href="https://github.com/zernonia" target="_blank">
+                  <IconGithub />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
