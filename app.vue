@@ -13,6 +13,8 @@ const blob1Class = computed(() => {
   switch (route.name) {
     case "index":
       return "top-1/6 left-1/20"
+    case "about":
+      return "top-1/5 left-1/5"
     default:
       return "top-1/10 -left-1/10"
   }
@@ -22,6 +24,8 @@ const blob2Class = computed(() => {
   switch (route.name) {
     case "index":
       return "top-1/2 left-1/3"
+    case "about":
+      return "top-3/5 left-1/3"
     default:
       return "top-1/2 left-1/3"
   }
@@ -31,6 +35,8 @@ const blob3Class = computed(() => {
   switch (route.name) {
     case "index":
       return "bottom-1/5 right-1/20"
+    case "about":
+      return "bottom-2/5 -right-1/20"
     case "project":
       return "bottom-1/5 -right-1/5"
     default:
@@ -41,7 +47,7 @@ const blob3Class = computed(() => {
 
 <template>
   <div
-    class="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-800 dark:text-light-900 transition duration-300"
+    class="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-900 dark:text-light-900 transition duration-300"
   >
     <div class="max-w-screen-lg w-full relative p-8 flex flex-col items-center justify-between">
       <div class="z-10 w-full flex justify-end items-center mb-12">
