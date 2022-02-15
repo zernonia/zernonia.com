@@ -7,10 +7,11 @@ export default defineConfig({
       },
       boxShadow: {
         "inset-white": "inset 0 0 100px 20px #ffffff",
+        "inset-dark": "inset 0 0 100px 20px rgb(24, 24, 24)",
       },
       animation: {
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        blob: "blob 4s infinite",
+        blob: "blob 10s infinite",
       },
       keyframes: {
         blob: {

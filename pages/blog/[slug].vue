@@ -38,7 +38,7 @@ watch(
           </div>
         </div>
         <article
-          class="p-10 mt-12 prose-lg bg-white bg-opacity-75 shadow-inset-white rounded-3xl"
+          class="p-10 mt-12 prose-lg bg-white dark:bg-dark-900 bg-opacity-75 shadow-inset-white dark:shadow-none rounded-3xl"
           v-html="data.data.body_html"
         ></article>
       </div>

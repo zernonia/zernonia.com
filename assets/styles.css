@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
 
 .button-next {
-  @apply inline-flex items-center px-8 py-3 min-w-8 bg-black text-xl tracking-wide text-white font-semibold rounded-xl shadow-none hover:shadow-2xl transition duration-300;
+  @apply inline-flex items-center px-8 py-3 min-w-8 bg-dark-900 text-xl tracking-wide text-white font-semibold rounded-xl shadow-none hover:shadow-2xl transition duration-300;
 }
 
 .fade-enter-active,

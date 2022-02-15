@@ -30,7 +30,7 @@ watch(
         <div
           v-for="project in data.data"
           :key="project.name"
-          class="mt-12 p-8 shadow-inset-white rounded-3xl flex items-center mb-8"
+          class="mt-12 p-8 shadow-inset-white dark:shadow-none rounded-3xl flex items-center mb-8"
         >
           <img :src="project.image" class="w-3/5 object-cover w-full h-auto rounded-2xl" />
           <div class="w-2/5 ml-12">

@@ -25,9 +25,9 @@ definePageMeta({
 
 <template>
   <section class="w-full flex flex-col items-center">
-    <div class="mt-12 px-8 py-24 shadow-inset-white rounded-4xl flex flex-col items-center">
+    <div class="mt-12 px-8 py-24 shadow-inset-white dark:shadow-none rounded-4xl flex flex-col items-center">
       <h1 class="font-bold text-7xl text-center font-space">Zernonia</h1>
-      <h2 class="mt-4 text-2xl text-center text-gray-500">Self-taught Frontend Developer <br /></h2>
+      <h2 class="mt-4 text-2xl text-center text-gray-500 dark:text-gray-300">Self-taught Frontend Developer <br /></h2>
       <div class="mt-12 grid grid-cols-4 gap-10">
         <div class="info text-right">
           <div>

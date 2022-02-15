@@ -7,7 +7,7 @@ import IconDevTo from "~icons/feather/edit"
 
 <template>
   <footer class="mt-12 self-start">
-    <div class="flex space-x-4 text-dark-900">
+    <div class="flex space-x-4 text-dark-900 dark:text-light-900">
       <a href="https://github.com/zernonia" target="_blank"><IconGithub class="w-6 h-auto fill-current" /></a>
       <a href="https://twitter.com/zernonia" target="_blank"><IconTwitter class="w-6 h-auto fill-current" /></a>
       <a href="https://dribbble.com/zernonia" target="_blank"><IconDribbble class="w-6 h-auto fill-current" /></a>
