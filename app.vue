@@ -9,7 +9,7 @@ const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
 const blob1Class = computed(() => {
-  if (store.loading) return "left-1/3 top-1/3 !opacity-0"
+  if (store.loading) return "left-1/3 top-1/3"
   switch (route.name) {
     case "index":
       return "top-1/6 left-1/20"
@@ -20,7 +20,7 @@ const blob1Class = computed(() => {
   }
 })
 const blob2Class = computed(() => {
-  if (store.loading) return "left-1/3 top-1/3 "
+  if (store.loading) return "left-1/3 top-1/3  !opacity-0"
   switch (route.name) {
     case "index":
       return "top-1/2 left-1/3"
@@ -36,7 +36,7 @@ const blob3Class = computed(() => {
     case "index":
       return "bottom-1/5 right-1/20"
     case "about":
-      return "bottom-2/5 -right-1/20"
+      return "bottom-1/20 -right-1/20 dark:bottom-2/5 dark:-right-1/20"
     case "project":
       return "bottom-1/5 -right-1/5"
     default:
