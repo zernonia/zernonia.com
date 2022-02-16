@@ -32,8 +32,16 @@ export default defineConfig({
       typography: {
         lg: {
           css: {
+            h1: {
+              fontSize: "2.6rem",
+              fontWeight: "600",
+            },
             h2: {
               fontSize: "2.4rem",
+              fontWeight: "600",
+            },
+            h3: {
+              fontSize: "2rem",
               fontWeight: "600",
             },
           },
