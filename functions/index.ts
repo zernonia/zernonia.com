@@ -6,3 +6,8 @@ export const dateFormatter = (date: Date) => {
     return
   }
 }
+
+export const numberFormatter = (num: number) => {
+  if (!num) return
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+}
