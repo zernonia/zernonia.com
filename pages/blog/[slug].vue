@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DevToPost } from "@/interface"
 import { store } from "@/store"
+import IconArrow from "~icons/feather/arrow-left"
 const route = useRoute()
 
 const { data, pending } = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
@@ -28,7 +29,13 @@ watch(
     <transition name="fade" mode="out-in">
       <h1 class="font-bold text-7xl text-center font-space" v-if="!data?.data">Loading...</h1>
       <div v-else>
-        <img class="mt-12 rounded-4xl" :src="data.data.cover_image" :alt="data.data.title" />
+        <NuxtLink
+          to="../blog"
+          class="inline-flex items-center text-base bg-transparent text-warm-gray-400 dark:text-light-900 group"
+        >
+          <IconArrow class="w-4 h-4 duration transition-all mr-2 group-hover:mr-3" /> Back
+        </NuxtLink>
+        <img class="mt-4 rounded-4xl" :src="data.data.cover_image" :alt="data.data.title" />
         <h2 class="mt-12 text-6xl font-bold font-space">{{ data.data.title }}</h2>
         <div class="mt-4 flex items-center">
           <img class="w-14 h-14 rounded-2xl" :src="data.data.user.profile_image_90" :alt="data.data.user.name" />
