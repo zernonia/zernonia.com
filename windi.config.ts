@@ -41,5 +41,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [require("windicss/plugin/typography")],
+  plugins: [require("windicss/plugin/typography"), require("windicss/plugin/aspect-ratio")],
 })

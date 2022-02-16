@@ -38,7 +38,7 @@ watch(
           class="mt-12 mb-20 rounded-4xl p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
         >
           <NuxtLink :to="`/blog/${latestPost.slug}`">
-            <img class="rounded-4xl" :src="latestPost.cover_image" :alt="latestPost.title" />
+            <img class="rounded-4xl aspect-video object-cover" :src="latestPost.cover_image" :alt="latestPost.title" />
             <div class="p-6">
               <p>{{ latestPost.readable_publish_date }}</p>
               <h3 class="font-bold text-4xl font-space">{{ latestPost.title }}</h3>
@@ -56,7 +56,11 @@ watch(
             v-for="post in otherPost"
           >
             <NuxtLink :to="`/blog/${post.slug}`">
-              <img class="w-full h-auto rounded-3xl" :src="post.cover_image" :alt="post.title" />
+              <img
+                class="w-full h-auto rounded-3xl aspect-video object-cover"
+                :src="post.cover_image"
+                :alt="post.title"
+              />
               <div class="p-6 flex flex-col justify-between">
                 <div>
                   <p>{{ post.readable_publish_date }}</p>
