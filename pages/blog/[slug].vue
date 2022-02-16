@@ -4,7 +4,7 @@ import { store } from "@/store"
 import IconArrow from "~icons/feather/arrow-left"
 const route = useRoute()
 
-const { data, pending } = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
+const { data, pending, error } = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
   $fetch<DevToPost>(`/api/devto/${route.params.slug}`)
 )
 
@@ -27,7 +27,8 @@ watch(
 <template>
   <section>
     <transition name="fade" mode="out-in">
-      <h1 class="font-bold text-7xl text-center font-space" v-if="!data?.data">Loading...</h1>
+      <h1 class="font-bold text-7xl text-center font-space" v-if="!data?.data && !error">Loading...</h1>
+      <h1 class="font-bold text-7xl text-center font-space" v-else-if="error">Error...</h1>
       <div v-else>
         <NuxtLink
           to="../blog"

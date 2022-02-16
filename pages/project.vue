@@ -4,7 +4,7 @@ import { store } from "@/store"
 import IconArrow from "~icons/feather/arrow-right"
 import IconLink from "~icons/feather/external-link"
 
-const { data, pending } = useLazyAsyncData("project", () => $fetch<Project>("/api/notion"))
+const { data, pending, error } = useLazyAsyncData("project", () => $fetch<Project>("/api/notion"))
 
 definePageMeta({
   pageTransition: {
@@ -25,7 +25,8 @@ watch(
 <template>
   <div class="w-full mt-12">
     <transition name="fade" mode="out-in">
-      <h1 v-if="!data?.data" class="font-bold text-7xl text-center font-space">Project</h1>
+      <h1 v-if="!data?.data && !error" class="font-bold text-7xl text-center font-space">Project</h1>
+      <h1 v-else-if="error" class="font-bold text-7xl text-center font-space">Error...</h1>
       <div v-else>
         <h1 class="font-bold text-7xl text-center font-space">Project</h1>
         <div

@@ -2,7 +2,7 @@
 import { DevTo } from "@/interface"
 import { store } from "@/store"
 
-const { data, pending } = useLazyAsyncData("blog", () => $fetch<DevTo>("/api/devto"))
+const { data, pending, error } = useLazyAsyncData("blog", () => $fetch<DevTo>("/api/devto"))
 const latestPost = computed(() => data.value?.data[0])
 const otherPost = computed(() => data.value?.data.slice(1))
 const tagList = computed(() => {
@@ -30,7 +30,8 @@ watch(
 <template>
   <div class="w-full">
     <transition name="fade" mode="out-in">
-      <h1 v-if="!data?.data" class="font-bold text-7xl text-center font-space">Blog</h1>
+      <h1 v-if="!data?.data && !error" class="font-bold text-7xl text-center font-space">Blog</h1>
+      <h1 v-else-if="error" class="font-bold text-7xl text-center font-space">Error</h1>
       <div v-else>
         <h1 class="font-bold text-7xl text-center font-space">Blog</h1>
         <div
