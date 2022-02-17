@@ -30,30 +30,30 @@ watch(
 <template>
   <div class="w-full">
     <transition name="fade" mode="out-in">
-      <h1 v-if="!data?.data && !error" class="font-bold text-7xl text-center font-space">Blog</h1>
-      <h1 v-else-if="error" class="font-bold text-7xl text-center font-space">Error</h1>
+      <h1 v-if="!data?.data && !error" class="font-bold text-5xl md:text-7xl text-center font-space">Blog</h1>
+      <h1 v-else-if="error" class="font-bold text-5xl md:text-7xl text-center font-space">Error</h1>
       <div v-else>
-        <h1 class="font-bold text-7xl text-center font-space">Blog</h1>
+        <h1 class="font-bold text-5xl md:text-7xl text-center font-space">Blog</h1>
         <div
           v-if="latestPost"
-          class="mt-12 mb-20 rounded-4xl p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
+          class="mt-6 md:mt-12 mb-20 rounded-4xl p-6 md:p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
         >
           <NuxtLink :to="`/blog/${latestPost.slug}`">
             <img class="rounded-4xl aspect-video object-cover" :src="latestPost.cover_image" :alt="latestPost.title" />
-            <div class="p-6">
-              <p>{{ latestPost.readable_publish_date }}</p>
-              <h3 class="font-bold text-4xl font-space">{{ latestPost.title }}</h3>
-              <p class="mt-4 text-xl">{{ latestPost.description }}</p>
+            <div class="p-4 md:p-6">
+              <p class="text-sm">{{ latestPost.readable_publish_date }}</p>
+              <h3 class="font-bold text-2xl md:text-4xl font-space">{{ latestPost.title }}</h3>
+              <p class="mt-4 md:text-xl">{{ latestPost.description }}</p>
 
-              <ul class="mt-4 flex flex-row space-x-2">
+              <ul class="mt-4 flex flex-wrap flex-row space-x-2">
                 <li class="tag" v-for="tag in latestPost.tag_list">#{{ tag }}</li>
               </ul>
             </div>
           </NuxtLink>
         </div>
-        <ul class="grid grid-cols-2 gap-6">
+        <ul class="md:grid grid-cols-2 gap-6">
           <li
-            class="w-full mb-12 rounded-4xl p-6 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
+            class="w-full mb-8 md:mb-12 rounded-4xl p-4 md:p-6 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
             v-for="post in otherPost"
           >
             <NuxtLink :to="`/blog/${post.slug}`">
@@ -62,13 +62,13 @@ watch(
                 :src="post.cover_image"
                 :alt="post.title"
               />
-              <div class="p-6 flex flex-col justify-between">
+              <div class="p-4 md:p-6 flex flex-col justify-between">
                 <div>
-                  <p>{{ post.readable_publish_date }}</p>
+                  <p class="text-sm">{{ post.readable_publish_date }}</p>
                   <h3 class="font-bold text-2xl font-space">{{ post.title }}</h3>
                   <p class="mt-2">{{ post.description }}</p>
                 </div>
-                <ul class="mt-4 flex flex-row space-x-2">
+                <ul class="mt-4 flex flex-wrap flex-row space-x-2">
                   <li class="tag" v-for="tag in post.tag_list">#{{ tag }}</li>
                 </ul>
               </div>

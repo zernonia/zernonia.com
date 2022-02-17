@@ -27,8 +27,8 @@ watch(
 <template>
   <section>
     <transition name="fade" mode="out-in">
-      <h1 class="font-bold text-7xl text-center font-space" v-if="!data?.data && !error">Loading...</h1>
-      <h1 class="font-bold text-7xl text-center font-space" v-else-if="error">Error...</h1>
+      <h1 class="font-bold text-5xl md:text-7xl text-center font-space" v-if="!data?.data && !error">Loading...</h1>
+      <h1 class="font-bold text-5xl md:text-7xl text-center font-space" v-else-if="error">Error...</h1>
       <div v-else>
         <NuxtLink
           to="../blog"
@@ -37,7 +37,7 @@ watch(
           <IconArrow class="w-4 h-4 duration transition-all mr-2 group-hover:mr-3" /> Back
         </NuxtLink>
         <img class="mt-4 rounded-4xl" :src="data.data.cover_image" :alt="data.data.title" />
-        <h2 class="mt-12 text-6xl font-bold font-space">{{ data.data.title }}</h2>
+        <h2 class="mt-12 text-4xl md:text-6xl font-bold font-space">{{ data.data.title }}</h2>
         <div class="mt-4 flex items-center">
           <img class="w-14 h-14 rounded-2xl" :src="data.data.user.profile_image_90" :alt="data.data.user.name" />
           <div class="ml-4">
@@ -46,7 +46,7 @@ watch(
           </div>
         </div>
         <article
-          class="p-10 my-12 prose-lg bg-white dark:bg-dark-900 bg-opacity-75 shadow-inset-white dark:shadow-none rounded-3xl"
+          class="p-6 md:p-10 my-12 prose-lg bg-white dark:bg-dark-900 bg-opacity-75 shadow-inset-white dark:shadow-none rounded-3xl"
           v-html="data.data.body_html"
         ></article>
       </div>
