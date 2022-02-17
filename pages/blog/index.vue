@@ -36,17 +36,21 @@ watch(
         <h1 class="font-bold text-5xl md:text-7xl text-center font-space">Blog</h1>
         <div
           v-if="latestPost"
-          class="mt-6 md:mt-12 mb-8 md:mb-20 rounded-4xl p-6 md:p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
+          class="mt-6 md:mt-12 mb-8 md:mb-20 rounded-4xl p-4 md:p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
         >
           <NuxtLink :to="`/blog/${latestPost.slug}`">
-            <img class="rounded-4xl aspect-video object-cover" :src="latestPost.cover_image" :alt="latestPost.title" />
+            <img
+              class="rounded-2xl md:rounded-4xl aspect-video object-cover"
+              :src="latestPost.cover_image"
+              :alt="latestPost.title"
+            />
             <div class="p-4 md:p-6">
               <p class="text-sm">{{ latestPost.readable_publish_date }}</p>
               <h3 class="font-bold text-2xl md:text-4xl font-space">{{ latestPost.title }}</h3>
               <p class="mt-4 md:text-xl">{{ latestPost.description }}</p>
 
-              <ul class="mt-4 flex flex-wrap flex-row space-x-2">
-                <li class="tag" v-for="tag in latestPost.tag_list">#{{ tag }}</li>
+              <ul class="mt-4 flex flex-wrap flex-row">
+                <li class="tag mr-2" v-for="tag in latestPost.tag_list">#{{ tag }}</li>
               </ul>
             </div>
           </NuxtLink>
@@ -58,7 +62,7 @@ watch(
           >
             <NuxtLink :to="`/blog/${post.slug}`">
               <img
-                class="w-full h-auto rounded-3xl aspect-video object-cover"
+                class="w-full h-auto rounded-2xl md:rounded-3xl aspect-video object-cover"
                 :src="post.cover_image"
                 :alt="post.title"
               />
@@ -68,8 +72,8 @@ watch(
                   <h3 class="font-bold text-2xl font-space">{{ post.title }}</h3>
                   <p class="mt-2">{{ post.description }}</p>
                 </div>
-                <ul class="mt-4 flex flex-wrap flex-row space-x-2">
-                  <li class="tag" v-for="tag in post.tag_list">#{{ tag }}</li>
+                <ul class="mt-4 flex flex-wrap flex-row">
+                  <li class="tag mr-2" v-for="tag in post.tag_list">#{{ tag }}</li>
                 </ul>
               </div>
             </NuxtLink>
@@ -82,6 +86,6 @@ watch(
 
 <style lang="postcss">
 .tag {
-  @apply px-1 py-1 rounded-xl text-sm opacity-50;
+  @apply px-1 md:py-1 rounded-xl text-sm opacity-50;
 }
 </style>

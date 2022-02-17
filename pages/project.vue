@@ -40,7 +40,7 @@ watch(
             <p class="mb-4">{{ project.description }}</p>
             <a class="button-next group" :href="project.link" target="_blank"
               >Visit
-              <IconLink class="w-6 h-6 mb-0.5 duration transition-all ml-4 group-hover:ml-5" />
+              <IconLink class="w-5 md:w-6 h-5 md:h-6 mb-0.5 duration transition-all ml-2 md:ml-4 group-hover:ml-5" />
             </a>
           </div>
         </div>
