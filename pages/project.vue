@@ -25,18 +25,18 @@ watch(
 <template>
   <div class="w-full">
     <transition name="fade" mode="out-in">
-      <h1 v-if="!data?.data && !error" class="font-bold text-7xl text-center font-space">Project</h1>
-      <h1 v-else-if="error" class="font-bold text-7xl text-center font-space">Error...</h1>
+      <h1 v-if="!data?.data && !error" class="font-bold text-5xl md:text-7xl text-center font-space">Project</h1>
+      <h1 v-else-if="error" class="font-bold text-5xl md:text-7xl text-center font-space">Error...</h1>
       <div v-else>
-        <h1 class="font-bold text-7xl text-center font-space">Project</h1>
+        <h1 class="font-bold text-5xl md:text-7xl text-center font-space">Project</h1>
         <div
           v-for="project in data.data"
           :key="project.name"
-          class="mt-12 p-8 shadow-inset-white dark:shadow-none rounded-3xl flex items-center mb-8"
+          class="mt-12 p-6 md:p-8 shadow-inset-white dark:shadow-none rounded-3xl flex flex-col md:flex-row items-center mb-8"
         >
-          <img :src="project.image" class="w-3/5 object-cover w-full h-auto rounded-2xl" />
-          <div class="w-2/5 ml-12">
-            <h4 class="text-4xl font-bold font-space mb-4">{{ project.name }}</h4>
+          <img :src="project.image" class="md:w-3/5 object-cover w-full h-auto rounded-2xl" />
+          <div class="mt-4 md:mt-0 md:w-2/5 md:ml-12">
+            <h4 class="text-2xl md:text-4xl font-bold font-space mb-2 md:mb-4">{{ project.name }}</h4>
             <p class="mb-4">{{ project.description }}</p>
             <a class="button-next group" :href="project.link" target="_blank"
               >Visit
