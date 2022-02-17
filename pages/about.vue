@@ -32,7 +32,7 @@ definePageMeta({
     <div
       class="w-full max-w-screen-md px-6 sm:px-8 md:px-16 py-6 md:py-12 shadow-inset-white dark:shadow-none rounded-4xl flex flex-col items-center"
     >
-      <h1 class="font-bold text-5xl md:text-7xl text-center font-space">Zernonia</h1>
+      <h1 class="font-bold text-5xl md:text-7xl text-center font-space tracking-tight">Zernonia</h1>
       <h2 class="mt-4 text-xl md:text-2xl text-center text-gray-500 dark:text-gray-300">
         Self-taught Frontend Developer <br />
       </h2>

@@ -38,7 +38,9 @@ watch(
             <IconArrow class="w-4 h-4 duration transition-all mr-2 group-hover:mr-3" /> Back
           </NuxtLink>
           <img class="mt-4 rounded-3xl md:rounded-4xl" :src="data.data.cover_image" :alt="data.data.title" />
-          <h2 class="mt-6 md:mt-12 text-4xl md:text-6xl font-bold font-space">{{ data.data.title }}</h2>
+          <h2 class="mt-6 md:mt-12 text-4xl md:text-6xl font-bold font-space tracking-tight">
+            {{ data.data.title }}
+          </h2>
           <div class="mt-4 flex items-center">
             <img class="w-14 h-14 rounded-2xl" :src="data.data.user.profile_image_90" :alt="data.data.user.name" />
             <div class="ml-4">

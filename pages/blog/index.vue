@@ -45,8 +45,8 @@ watch(
               :alt="latestPost.title"
             />
             <div class="p-4 md:p-6">
-              <p class="text-sm">{{ latestPost.readable_publish_date }}</p>
-              <h3 class="font-bold text-2xl md:text-4xl font-space">{{ latestPost.title }}</h3>
+              <p class="text-sm text-warm-gray-400">{{ latestPost.readable_publish_date }}</p>
+              <h3 class="font-bold text-2xl md:text-4xl font-space tracking-tight">{{ latestPost.title }}</h3>
               <p class="mt-4 md:text-xl">{{ latestPost.description }}</p>
 
               <ul class="mt-4 flex flex-wrap flex-row">
@@ -68,8 +68,8 @@ watch(
               />
               <div class="p-4 md:p-6 flex flex-col justify-between">
                 <div>
-                  <p class="text-sm">{{ post.readable_publish_date }}</p>
-                  <h3 class="font-bold text-2xl font-space">{{ post.title }}</h3>
+                  <p class="text-sm text-warm-gray-400">{{ post.readable_publish_date }}</p>
+                  <h3 class="font-bold text-2xl font-space tracking-tight">{{ post.title }}</h3>
                   <p class="mt-2">{{ post.description }}</p>
                 </div>
                 <ul class="mt-4 flex flex-wrap flex-row">
