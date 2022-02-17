@@ -36,7 +36,7 @@ watch(
         <h1 class="font-bold text-5xl md:text-7xl text-center font-space">Blog</h1>
         <div
           v-if="latestPost"
-          class="mt-6 md:mt-12 mb-8 md:mb-20 rounded-4xl p-2 md:p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
+          class="mt-6 md:mt-12 mb-8 md:mb-20 rounded-4xl p-4 md:p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
         >
           <NuxtLink :to="`/blog/${latestPost.slug}`">
             <img
@@ -57,7 +57,7 @@ watch(
         </div>
         <ul class="md:grid grid-cols-2 gap-6">
           <li
-            class="w-full mb-8 md:mb-12 rounded-4xl p-2 md:p-6 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
+            class="w-full mb-8 md:mb-12 rounded-4xl p-4 md:p-6 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
             v-for="post in otherPost"
           >
             <NuxtLink :to="`/blog/${post.slug}`">
