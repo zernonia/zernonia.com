@@ -30,19 +30,21 @@ watch(
       <h1 class="font-bold text-5xl md:text-7xl text-center font-space" v-if="!data?.data && !error">Loading...</h1>
       <h1 class="font-bold text-5xl md:text-7xl text-center font-space" v-else-if="error">Error...</h1>
       <div v-else>
-        <NuxtLink
-          to="../blog"
-          class="inline-flex items-center text-base bg-transparent text-warm-gray-400 dark:text-light-900 group"
-        >
-          <IconArrow class="w-4 h-4 duration transition-all mr-2 group-hover:mr-3" /> Back
-        </NuxtLink>
-        <img class="mt-4 rounded-3xl md:rounded-4xl" :src="data.data.cover_image" :alt="data.data.title" />
-        <h2 class="mt-6 md:mt-12 text-4xl md:text-6xl font-bold font-space">{{ data.data.title }}</h2>
-        <div class="mt-4 flex items-center">
-          <img class="w-14 h-14 rounded-2xl" :src="data.data.user.profile_image_90" :alt="data.data.user.name" />
-          <div class="ml-4">
-            <p>{{ data.data.user.name }}</p>
-            <p>Published on {{ data.data.readable_publish_date }}</p>
+        <div class="p-2">
+          <NuxtLink
+            to="../blog"
+            class="inline-flex items-center text-base bg-transparent text-warm-gray-400 dark:text-light-900 group"
+          >
+            <IconArrow class="w-4 h-4 duration transition-all mr-2 group-hover:mr-3" /> Back
+          </NuxtLink>
+          <img class="mt-4 rounded-3xl md:rounded-4xl" :src="data.data.cover_image" :alt="data.data.title" />
+          <h2 class="mt-6 md:mt-12 text-4xl md:text-6xl font-bold font-space">{{ data.data.title }}</h2>
+          <div class="mt-4 flex items-center">
+            <img class="w-14 h-14 rounded-2xl" :src="data.data.user.profile_image_90" :alt="data.data.user.name" />
+            <div class="ml-4">
+              <p>{{ data.data.user.name }}</p>
+              <p>Published on {{ data.data.readable_publish_date }}</p>
+            </div>
           </div>
         </div>
         <article

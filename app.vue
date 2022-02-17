@@ -9,7 +9,7 @@ const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
 const blob1Class = computed(() => {
-  if (store.loading) return "left-1/3 top-1/3"
+  if (store.loading) return "left-1/4 md:left-1/3 top-1/3 md:top-1/3"
   switch (route.name) {
     case "index":
       return "top-1/6 left-1/20"
@@ -50,7 +50,7 @@ const blob3Class = computed(() => {
     class="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-900 text-dark-200 dark:text-light-900 transition duration-300"
   >
     <div class="max-w-screen-lg w-full relative p-4 sm:p-6 md:p-8 flex flex-col items-center justify-between">
-      <div class="z-10 w-full flex justify-end items-center mb-12">
+      <div class="z-10 w-full flex justify-end items-center mb-6 md:mb-12">
         <nav class="flex space-x-4 md:space-x-6 items-center text-base md:text-lg font-space">
           <NuxtLink to="/">Home</NuxtLink>
           <NuxtLink to="/about">About</NuxtLink>
@@ -64,6 +64,7 @@ const blob3Class = computed(() => {
           </transition>
         </button>
       </div>
+
       <NuxtPage class="z-10" />
       <Footer class="z-10" />
 
