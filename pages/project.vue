@@ -23,7 +23,7 @@ watch(
 </script>
 
 <template>
-  <div class="w-full mt-12">
+  <div class="w-full">
     <transition name="fade" mode="out-in">
       <h1 v-if="!data?.data && !error" class="font-bold text-7xl text-center font-space">Project</h1>
       <h1 v-else-if="error" class="font-bold text-7xl text-center font-space">Error...</h1>

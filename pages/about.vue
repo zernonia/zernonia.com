@@ -30,7 +30,7 @@ definePageMeta({
 <template>
   <section class="w-full flex flex-col items-center">
     <div
-      class="w-full max-w-screen-md mt-12 px-6 sm:px-8 md:px-16 py-12 shadow-inset-white dark:shadow-none rounded-4xl flex flex-col items-center"
+      class="w-full max-w-screen-md px-6 sm:px-8 md:px-16 py-12 shadow-inset-white dark:shadow-none rounded-4xl flex flex-col items-center"
     >
       <h1 class="font-bold text-5xl md:text-7xl text-center font-space">Zernonia</h1>
       <h2 class="mt-4 text-xl md:text-2xl text-center text-gray-500 dark:text-gray-300">
