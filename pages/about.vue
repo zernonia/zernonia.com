@@ -30,12 +30,14 @@ definePageMeta({
 <template>
   <section class="w-full flex flex-col items-center">
     <div
-      class="w-full max-w-screen-md mt-12 px-16 py-8 shadow-inset-white dark:shadow-none rounded-4xl flex flex-col items-center"
+      class="w-full max-w-screen-md mt-12 px-6 sm:px-8 md:px-16 py-12 shadow-inset-white dark:shadow-none rounded-4xl flex flex-col items-center"
     >
-      <h1 class="font-bold text-7xl text-center font-space">Zernonia</h1>
-      <h2 class="mt-4 text-2xl text-center text-gray-500 dark:text-gray-300">Self-taught Frontend Developer <br /></h2>
+      <h1 class="font-bold text-5xl md:text-7xl text-center font-space">Zernonia</h1>
+      <h2 class="mt-4 text-xl md:text-2xl text-center text-gray-500 dark:text-gray-300">
+        Self-taught Frontend Developer <br />
+      </h2>
       <div class="mt-12 flex flex-col items-center">
-        <img :src="Avatar" alt="Zernonia" class="rounded-4xl max-w-96" />
+        <img :src="Avatar" alt="Zernonia" class="rounded-4xl w-full max-w-96" />
         <div class="info mt-12">
           <div>
             <h5>Basic</h5>
@@ -46,14 +48,14 @@ definePageMeta({
             </p>
           </div>
 
-          <div class="flex w-full">
-            <div class="w-1/2">
+          <div class="flex flex-col md:flex-row w-full">
+            <div class="md:w-1/2">
               <h5>Language/Framework</h5>
               <p class="framework text-gray-300 flex flex-wrap text-3xl">
                 <IconVue /><IconNuxt /><IconTypescript /><IconVite /><IconTailwind /><IconPostgres /><IconSupabase />
               </p>
             </div>
-            <div class="ml-16 w-1/2">
+            <div class="mt-12 md:mt-0 md:ml-16 md:w-1/2">
               <h5>Github Stats</h5>
               <ul>
                 <li class="flex mb-2 items-center">
@@ -98,7 +100,7 @@ definePageMeta({
   @apply flex flex-col justify-center;
 }
 .info h5 {
-  @apply text-xl font-bold text-gray-500 dark:text-warm-gray-500 mb-4;
+  @apply text-lg md:text-xl font-bold text-gray-500 dark:text-warm-gray-500 mb-4;
 }
 .info > div {
   @apply mb-12;
