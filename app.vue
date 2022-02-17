@@ -13,12 +13,12 @@ const navBlobClass = computed(() => {
     case "index":
       return "bg-yellow-200 dark:bg-yellow-500 left-2"
     case "about":
-      return "bg-purple-200 dark:bg-purple-500  left-22"
+      return "bg-purple-200 dark:bg-purple-500  left-16  md:left-22"
     case "project":
-      return "bg-blue-200 dark:bg-blue-500  left-42"
+      return "bg-blue-200 dark:bg-blue-500  left-30  md:left-42"
     case "blog":
     case "blog-slug":
-      return "bg-red-300 dark:bg-red-500  left-62"
+      return "bg-red-300 dark:bg-red-500  left-44  md:left-62"
   }
 })
 
