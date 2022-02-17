@@ -36,7 +36,7 @@ watch(
         <h1 class="font-bold text-5xl md:text-7xl text-center font-space">Blog</h1>
         <div
           v-if="latestPost"
-          class="mt-6 md:mt-12 mb-20 rounded-4xl p-6 md:p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
+          class="mt-6 md:mt-12 mb-8 md:mb-20 rounded-4xl p-6 md:p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
         >
           <NuxtLink :to="`/blog/${latestPost.slug}`">
             <img class="rounded-4xl aspect-video object-cover" :src="latestPost.cover_image" :alt="latestPost.title" />
