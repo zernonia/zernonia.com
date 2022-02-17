@@ -24,6 +24,7 @@ export const useCustomMeta = () => {
         { name: "twitter:description", content: desc },
         { name: "twitter:image", content: image },
       ],
+      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
     })
   }
 
