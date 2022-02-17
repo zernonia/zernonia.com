@@ -8,6 +8,20 @@ const route = useRoute()
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
+const navBlobClass = computed(() => {
+  switch (route.name) {
+    case "index":
+      return "bg-yellow-200 dark:bg-yellow-500 left-2"
+    case "about":
+      return "bg-purple-200 dark:bg-purple-500  left-22"
+    case "project":
+      return "bg-blue-200 dark:bg-blue-500  left-42"
+    case "blog":
+    case "blog-slug":
+      return "bg-red-300 dark:bg-red-500  left-62"
+  }
+})
+
 const blob1Class = computed(() => {
   if (store.loading) return "left-1/4 md:left-1/3 top-1/3 md:top-1/3"
   switch (route.name) {
@@ -51,11 +65,13 @@ const blob3Class = computed(() => {
   >
     <div class="max-w-screen-lg w-full relative p-4 sm:p-6 md:p-8 flex flex-col items-center justify-between">
       <div class="z-10 w-full flex justify-end items-center mb-6 md:mb-12">
-        <nav class="flex space-x-4 md:space-x-6 items-center text-base md:text-lg font-space">
+        <nav class="relative flex space-x-4 md:space-x-6 items-center text-base md:text-lg font-space">
           <NuxtLink to="/">Home</NuxtLink>
           <NuxtLink to="/about">About</NuxtLink>
           <NuxtLink to="/project">Project</NuxtLink>
           <NuxtLink to="/blog">Blog</NuxtLink>
+
+          <Blob :class="navBlobClass" class="top-0 !ml-0 !w-8 !h-8 !blur-md !animate-none"></Blob>
         </nav>
         <button class="mt-2 ml-4 text-lg md:text-2xl" @click="toggleDark()">
           <transition name="fade" mode="out-in">
