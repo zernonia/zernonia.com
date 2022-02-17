@@ -30,7 +30,7 @@ definePageMeta({
 <template>
   <section class="w-full flex flex-col items-center">
     <div
-      class="w-full max-w-screen-md mt-12 px-8 py-8 shadow-inset-white dark:shadow-none rounded-4xl flex flex-col items-center"
+      class="w-full max-w-screen-md mt-12 px-16 py-8 shadow-inset-white dark:shadow-none rounded-4xl flex flex-col items-center"
     >
       <h1 class="font-bold text-7xl text-center font-space">Zernonia</h1>
       <h2 class="mt-4 text-2xl text-center text-gray-500 dark:text-gray-300">Self-taught Frontend Developer <br /></h2>
@@ -56,14 +56,14 @@ definePageMeta({
             <div class="ml-16 w-1/2">
               <h5>Github Stats</h5>
               <ul>
-                <li class="inline-flex items-center">
-                  <IconStar class="text-gray-300 text-lg mr-2" /> Stars: {{ data?.total_stars ?? 0 }}
+                <li class="flex mb-2 items-center">
+                  <IconStar class="text-gray-300 text-xl mr-2" /> Stars: {{ data?.total_stars ?? 0 }}
                 </li>
-                <li class="inline-flex items-center">
-                  <IconCommit class="text-gray-300 text-lg mr-2" /> Commit: {{ data?.total_commits ?? 0 }}
+                <li class="flex mb-2 items-center">
+                  <IconCommit class="text-gray-300 text-xl mr-2" /> Commit: {{ data?.total_commits ?? 0 }}
                 </li>
-                <li class="inline-flex items-center">
-                  <IconTrendUp class="text-gray-300 text-lg mr-2" /> Followers: {{ data?.followers ?? 0 }}
+                <li class="flex mb-2 items-center">
+                  <IconTrendUp class="text-gray-300 text-xl mr-2" /> Followers: {{ data?.followers ?? 0 }}
                 </li>
               </ul>
             </div>
@@ -95,7 +95,7 @@ definePageMeta({
 
 <style lang="postcss">
 .info {
-  @apply max-w-128 flex flex-col justify-center;
+  @apply flex flex-col justify-center;
 }
 .info h5 {
   @apply text-xl font-bold text-gray-500 dark:text-warm-gray-500 mb-4;
