@@ -49,15 +49,15 @@ const blob3Class = computed(() => {
   <div
     class="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-900 text-dark-200 dark:text-light-900 transition duration-300"
   >
-    <div class="max-w-screen-lg w-full relative p-8 flex flex-col items-center justify-between">
+    <div class="max-w-screen-lg w-full relative p-4 sm:p-6 md:p-8 flex flex-col items-center justify-between">
       <div class="z-10 w-full flex justify-end items-center mb-12">
-        <nav class="flex space-x-6 items-center text-lg font-space">
+        <nav class="flex space-x-4 md:space-x-6 items-center text-base md:text-lg font-space">
           <NuxtLink to="/">Home</NuxtLink>
           <NuxtLink to="/about">About</NuxtLink>
           <NuxtLink to="/project">Project</NuxtLink>
           <NuxtLink to="/blog">Blog</NuxtLink>
         </nav>
-        <button class="mt-2 ml-4 text-2xl" @click="toggleDark()">
+        <button class="mt-2 ml-4 text-lg md:text-2xl" @click="toggleDark()">
           <transition name="fade" mode="out-in">
             <IconLightMode v-if="isDark"></IconLightMode>
             <IconDarkMode v-else></IconDarkMode>
