@@ -14,7 +14,7 @@ const blob1Class = computed(() => {
     case "index":
       return "top-1/6 left-1/20"
     case "about":
-      return "top-1/5 left-1/5"
+      return "top-1/10 left-0"
     default:
       return "top-1/10 -left-1/10"
   }
@@ -25,7 +25,7 @@ const blob2Class = computed(() => {
     case "index":
       return "top-1/2 left-1/3"
     case "about":
-      return "top-3/5 left-1/3"
+      return "top-2/5 left-1/3"
     default:
       return "top-1/2 left-1/3"
   }
