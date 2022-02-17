@@ -25,6 +25,9 @@ definePageMeta({
     mode: "out-in",
   },
 })
+
+const { setMeta } = useCustomMeta()
+setMeta("Wanna know more about me? ☺️ - Zernonia")
 </script>
 
 <template>

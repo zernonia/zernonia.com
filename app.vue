@@ -57,6 +57,9 @@ const blob3Class = computed(() => {
       return "bottom-1/20 -right-1/20"
   }
 })
+
+const { setMeta } = useCustomMeta()
+setMeta("Welcome to Zernonia 🤩")
 </script>
 
 <template>

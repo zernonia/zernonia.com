@@ -20,6 +20,9 @@ watch(
   },
   { immediate: true }
 )
+
+const { setMeta } = useCustomMeta()
+setMeta("Fun Projects ⭐️ - Zernonia ")
 </script>
 
 <template>

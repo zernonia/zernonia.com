@@ -25,6 +25,9 @@ watch(
   },
   { immediate: true }
 )
+
+const { setMeta } = useCustomMeta()
+setMeta("My Blog 📒 - Zernonia ")
 </script>
 
 <template>
