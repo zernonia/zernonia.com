@@ -47,7 +47,7 @@ const blob3Class = computed(() => {
 
 <template>
   <div
-    class="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-900 dark:text-light-900 transition duration-300"
+    class="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-900 text-dark-200 dark:text-light-900 transition duration-300"
   >
     <div class="max-w-screen-lg w-full relative p-8 flex flex-col items-center justify-between">
       <div class="z-10 w-full flex justify-end items-center mb-12">
