@@ -15,10 +15,16 @@ definePageMeta({
   },
 })
 
+const { setMeta } = useCustomMeta()
 watch(
   pending,
   () => {
     store.loading = pending.value
+    if (data.value) {
+      setMeta(data.value.data.title, data.value.data.description, data.value.data.cover_image)
+    } else {
+      setMeta("Loading... - Zernonia")
+    }
   },
   { immediate: true }
 )
