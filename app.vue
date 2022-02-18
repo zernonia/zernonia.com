@@ -76,7 +76,7 @@ setMeta("Welcome to Zernonia 🤩")
 
           <Blob :class="navBlobClass" class="top-0 !ml-0 !w-8 !h-8 !blur-md !animate-none"></Blob>
         </nav>
-        <button class="mt-2 ml-4 text-lg md:text-2xl" @click="toggleDark()">
+        <button class="mt-2 ml-4 text-lg md:text-2xl" aria-label="Toggle Dark mode" @click="toggleDark()">
           <transition name="fade" mode="out-in">
             <IconLightMode v-if="isDark"></IconLightMode>
             <IconDarkMode v-else></IconDarkMode>
