@@ -37,7 +37,7 @@ setMeta("Fun Projects ⭐️ - Zernonia ")
           :key="project.name"
           class="mt-4 md:mt-12 p-6 md:p-8 shadow-inset-white dark:shadow-none rounded-3xl flex flex-col md:flex-row items-center mb-8"
         >
-          <img :src="project.image" class="md:w-3/5 object-cover w-full h-auto rounded-2xl" />
+          <img :src="project.image" :alt="project.name" class="md:w-3/5 object-cover w-full h-auto rounded-2xl" />
           <div class="mt-4 md:mt-0 md:w-2/5 md:ml-12">
             <h4 class="text-2xl md:text-4xl font-bold font-space mb-2 md:mb-4">{{ project.name }}</h4>
             <p class="mb-4">{{ project.description }}</p>
