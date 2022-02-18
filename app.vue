@@ -63,44 +63,46 @@ setMeta("Welcome to Zernonia 🤩")
 </script>
 
 <template>
-  <div
-    class="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-900 text-dark-200 dark:text-light-900 transition duration-300"
-  >
-    <div class="max-w-screen-lg w-full relative p-4 sm:p-6 md:p-8 flex flex-col items-center justify-between">
-      <div class="z-10 w-full flex justify-end items-center mb-6 md:mb-12">
-        <nav class="relative flex space-x-4 md:space-x-6 items-center text-base md:text-lg font-space">
-          <NuxtLink to="/">Home</NuxtLink>
-          <NuxtLink to="/about">About</NuxtLink>
-          <NuxtLink to="/project">Project</NuxtLink>
-          <NuxtLink to="/blog">Blog</NuxtLink>
+  <Html lang="en-US">
+    <div
+      class="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-900 text-dark-200 dark:text-light-900 transition duration-300"
+    >
+      <div class="max-w-screen-lg w-full relative p-4 sm:p-6 md:p-8 flex flex-col items-center justify-between">
+        <div class="z-10 w-full flex justify-end items-center mb-6 md:mb-12">
+          <nav class="relative flex space-x-4 md:space-x-6 items-center text-base md:text-lg font-space">
+            <NuxtLink to="/">Home</NuxtLink>
+            <NuxtLink to="/about">About</NuxtLink>
+            <NuxtLink to="/project">Project</NuxtLink>
+            <NuxtLink to="/blog">Blog</NuxtLink>
 
-          <Blob :class="navBlobClass" class="top-0 !ml-0 !w-8 !h-8 !blur-md !animate-none"></Blob>
-        </nav>
-        <button class="mt-2 ml-4 text-lg md:text-2xl" aria-label="Toggle Dark mode" @click="toggleDark()">
-          <transition name="fade" mode="out-in">
-            <IconLightMode v-if="isDark"></IconLightMode>
-            <IconDarkMode v-else></IconDarkMode>
-          </transition>
-        </button>
-      </div>
+            <Blob :class="navBlobClass" class="top-0 !ml-0 !w-8 !h-8 !blur-md !animate-none"></Blob>
+          </nav>
+          <button class="mt-2 ml-4 text-lg md:text-2xl" aria-label="Toggle Dark mode" @click="toggleDark()">
+            <transition name="fade" mode="out-in">
+              <IconLightMode v-if="isDark"></IconLightMode>
+              <IconDarkMode v-else></IconDarkMode>
+            </transition>
+          </button>
+        </div>
 
-      <NuxtPage class="z-10" />
-      <Footer class="z-10" />
+        <NuxtPage class="z-10" />
+        <Footer class="z-10" />
 
-      <div class="z-0 fixed top-0 transform left-1/2 -translate-x-1/2 max-w-screen-lg w-full h-full">
-        <Blob
-          :class="blob1Class"
-          class="bg-yellow-200 dark:bg-yellow-500 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-        ></Blob>
-        <Blob
-          :class="blob2Class"
-          class="bg-purple-200 dark:bg-purple-700 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-1000"
-        ></Blob>
-        <Blob
-          :class="blob3Class"
-          class="bg-blue-300 dark:bg-blue-700 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-3000"
-        ></Blob>
+        <div class="z-0 fixed top-0 transform left-1/2 -translate-x-1/2 max-w-screen-lg w-full h-full">
+          <Blob
+            :class="blob1Class"
+            class="bg-yellow-200 dark:bg-yellow-500 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+          ></Blob>
+          <Blob
+            :class="blob2Class"
+            class="bg-purple-200 dark:bg-purple-700 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-1000"
+          ></Blob>
+          <Blob
+            :class="blob3Class"
+            class="bg-blue-300 dark:bg-blue-700 animate-blob animate-ease-[cubic-bezier(0.25,0.1,0.25,1)] animate-delay-3000"
+          ></Blob>
+        </div>
       </div>
     </div>
-  </div>
+  </Html>
 </template>
