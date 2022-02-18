@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import IconArrow from "~icons/feather/arrow-right"
-import GifWave from "@/assets/wave.gif"
-
 definePageMeta({
   pageTransition: {
     name: "fade",
@@ -19,7 +17,7 @@ setMeta("Welcome to Zernonia 🤩")
   >
     <p class="inline-flex items-center text-center text-lg md:text-2xl text-gray-500 dark:text-gray-300 tracking-wide">
       Hi
-      <img :src="GifWave" class="w-12 mx-2" />
+      <span class="wave text-5xl mx-3 max-2">👋🏻</span>
       I am
     </p>
     <h1 class="text-6xl md:text-8xl font-bold my-4 tracking-tight font-space">Zernonia</h1>
