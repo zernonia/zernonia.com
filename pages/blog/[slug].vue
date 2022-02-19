@@ -78,7 +78,36 @@ watch(
 .highlight__panel-action {
   @apply hidden;
 }
-.plaintext {
-  @apply bg-light-400 dark:bg-dark-700 !rounded-2xl;
+.ltag__twitter-tweet {
+  @apply mx-auto max-w-500px rounded-2xl overflow-hidden p-4 text-dark-800 bg-light-200 dark:bg-dark-600 dark:text-light-900 text-base;
+
+  & img {
+    @apply !my-0;
+  }
+}
+.ltag__twitter-tweet__main {
+  @apply p-8;
+}
+.ltag__twitter-tweet__header {
+  @apply relative h-20;
+}
+.ltag__twitter-tweet__profile-image {
+  @apply absolute left-0 top-0;
+}
+.ltag__twitter-tweet__full-name {
+  @apply absolute left-16 top-1;
+}
+.ltag__twitter-tweet__username {
+  @apply absolute left-16 top-7 text-sm;
+}
+.ltag__twitter-tweet__twitter-logo {
+  @apply absolute right-0 top-4;
+}
+.ltag__twitter-tweet__date {
+  @apply text-sm text-dark-50 py-0.5;
+}
+
+.ltag__twitter-tweet__actions {
+  @apply flex space-x-8 mt-1;
 }
 </style>
