@@ -71,4 +71,7 @@ watch(
 .highlight__panel-action {
   @apply hidden;
 }
+.plaintext {
+  @apply bg-light-400 dark:bg-dark-700 !rounded-2xl;
+}
 </style>
