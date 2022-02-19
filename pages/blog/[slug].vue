@@ -78,6 +78,11 @@ watch(
 .highlight__panel-action {
   @apply hidden;
 }
+
+pre {
+  @apply bg-light-400 dark:bg-dark-700 !rounded-2xl overflow-x-auto;
+}
+
 .ltag__twitter-tweet {
   @apply mx-auto max-w-500px rounded-2xl overflow-hidden p-4 text-dark-800 bg-light-200 dark:bg-dark-600 dark:text-light-900 text-base;
 
