@@ -55,10 +55,17 @@ watch(
             </div>
           </div>
         </div>
+
         <article
           class="p-6 md:p-10 my-12 prose-sm md:prose-lg bg-white dark:bg-dark-900 bg-opacity-75 shadow-inset-white dark:shadow-none rounded-3xl"
           v-html="data.data.body_html"
         ></article>
+
+        <div class="flex justify-center mb-12">
+          <a class="button-next text-center" :href="data.data.url + '#comments'" target="_blank">
+            Check out the post's comment ({{ data.data.comments_count }})
+          </a>
+        </div>
       </div>
     </transition>
   </section>
