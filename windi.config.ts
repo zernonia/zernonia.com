@@ -44,6 +44,9 @@ export default defineConfig({
               fontSize: "2rem",
               fontWeight: "600",
             },
+            img: {
+              borderRadius: "1.5rem",
+            },
           },
         },
         sm: {
@@ -59,6 +62,9 @@ export default defineConfig({
             h3: {
               fontSize: "1rem",
               fontWeight: "600",
+            },
+            img: {
+              borderRadius: "1rem",
             },
           },
         },
