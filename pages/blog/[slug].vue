@@ -68,4 +68,7 @@ watch(
 .prose-lg img {
   @apply rounded-2xl;
 }
+.highlight__panel-action {
+  @apply hidden;
+}
 </style>
