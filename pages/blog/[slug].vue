@@ -107,7 +107,7 @@ pre {
 
 .ltag__twitter-tweet,
 .ltag-github-readme-tag {
-  @apply mx-auto max-w-500px rounded-2xl overflow-hidden p-4 text-dark-800 bg-light-200 dark:bg-dark-600 dark:text-light-900 text-base;
+  @apply mx-auto max-w-500px rounded-2xl overflow-hidden !pl-0 text-dark-800 bg-light-200 dark:bg-dark-600 dark:text-light-900 text-base;
 
   & img,
   h2 {
@@ -119,7 +119,11 @@ pre {
   }
 }
 .ltag__twitter-tweet__main {
-  @apply md:p-8;
+  @apply cursor-pointer;
+}
+.ltag__twitter-tweet__main,
+.ltag-github-readme-tag {
+  @apply !p-4 !md:p-12;
 }
 .ltag__twitter-tweet__header {
   @apply relative h-20;
@@ -143,9 +147,6 @@ pre {
   @apply flex space-x-8 mt-1;
 }
 
-.ltag-github-readme-tag {
-  @apply p-4 md:p-12;
-}
 .readme-overview {
   h2 {
     @apply flex items-center;
