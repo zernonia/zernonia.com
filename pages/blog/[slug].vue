@@ -83,11 +83,17 @@ pre {
   @apply bg-light-400 dark:bg-dark-700 !rounded-2xl overflow-x-auto;
 }
 
-.ltag__twitter-tweet {
+.ltag__twitter-tweet,
+.ltag-github-readme-tag {
   @apply mx-auto max-w-500px rounded-2xl overflow-hidden p-4 text-dark-800 bg-light-200 dark:bg-dark-600 dark:text-light-900 text-base;
 
-  & img {
-    @apply !my-0;
+  & img,
+  h2 {
+    @apply !my-0 !text-xl;
+  }
+
+  h3 {
+    @apply mt-2 !my-0 !text-base !font-normal;
   }
 }
 .ltag__twitter-tweet__main {
@@ -111,8 +117,39 @@ pre {
 .ltag__twitter-tweet__date {
   @apply text-sm text-dark-50 py-0.5;
 }
-
 .ltag__twitter-tweet__actions {
   @apply flex space-x-8 mt-1;
+}
+
+.ltag-github-readme-tag {
+  @apply p-12;
+}
+.readme-overview {
+  h2 {
+    @apply flex items-center;
+
+    & a {
+      @apply mx-2;
+    }
+
+    & img {
+      @apply filter invert-100;
+    }
+  }
+}
+.ltag-github-body {
+  @apply max-h-96 relative overflow-hidden;
+}
+.ltag-github-body:after {
+  content: "";
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(28, 28, 30) 90%);
+  @apply absolute z-1 bottom-0 left-0 pointer-events-none w-full h-28;
+}
+.gh-btn-container {
+  @apply flex justify-center;
+
+  & .gh-btn {
+    @apply !text-white;
+  }
 }
 </style>
