@@ -5,6 +5,10 @@ export default defineConfig({
       fontFamily: {
         space: ["Space Grotesk", "sans-serif"],
       },
+      backgroundImage: {
+        "fade-white": "linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(250, 250, 250) 90%)",
+        "fade-dark": "linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(28, 28, 30) 90%)",
+      },
       boxShadow: {
         "inset-white": "inset 0 0 100px 20px #ffffff",
         "inset-dark": "inset 0 0 100px 20px rgb(24, 24, 24)",
