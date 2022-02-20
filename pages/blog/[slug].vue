@@ -97,7 +97,7 @@ pre {
   }
 }
 .ltag__twitter-tweet__main {
-  @apply p-8;
+  @apply md:p-8;
 }
 .ltag__twitter-tweet__header {
   @apply relative h-20;
@@ -122,7 +122,7 @@ pre {
 }
 
 .ltag-github-readme-tag {
-  @apply p-12;
+  @apply p-4 md:p-12;
 }
 .readme-overview {
   h2 {
@@ -133,7 +133,7 @@ pre {
     }
 
     & img {
-      @apply filter invert-100;
+      @apply filter dark:invert-100;
     }
   }
 }
@@ -141,9 +141,7 @@ pre {
   @apply max-h-96 relative overflow-hidden;
 }
 .ltag-github-body:after {
-  content: "";
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(28, 28, 30) 90%);
-  @apply absolute z-1 bottom-0 left-0 pointer-events-none w-full h-28;
+  @apply content-[''] absolute z-1 bottom-0 left-0 pointer-events-none w-full h-28 bg-fade-white dark:bg-fade-dark;
 }
 .gh-btn-container {
   @apply flex justify-center;
