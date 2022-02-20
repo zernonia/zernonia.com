@@ -4,6 +4,7 @@ import { store } from "@/store"
 import IconArrow from "~icons/feather/arrow-left"
 const route = useRoute()
 
+const article = ref<HTMLElement>()
 const { data, pending, error } = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
   $fetch<DevToPost>(`/api/devto/${route.params.slug}`)
 )
@@ -28,6 +29,14 @@ watch(
   },
   { immediate: true }
 )
+
+watch(article, () => {
+  let links = article.value.getElementsByTagName("a")
+
+  for (var i = 0; i < links.length; i++) {
+    links[i].target = "_blank"
+  }
+})
 </script>
 
 <template>
@@ -57,6 +66,7 @@ watch(
         </div>
 
         <article
+          ref="article"
           class="p-6 md:p-10 my-12 prose-sm md:prose-lg bg-white dark:bg-dark-900 bg-opacity-75 shadow-inset-white dark:shadow-none rounded-3xl"
           v-html="data.data.body_html"
         ></article>
