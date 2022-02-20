@@ -73,6 +73,9 @@ export default defineConfig({
             img: {
               borderRadius: "1rem",
             },
+            a: {
+              color: "#4ba0ff",
+            },
           },
         },
       },
