@@ -31,10 +31,22 @@ watch(
 )
 
 watch(article, () => {
+  // populate target _blank to all links
   let links = article.value.getElementsByTagName("a")
-
   for (var i = 0; i < links.length; i++) {
     links[i].target = "_blank"
+  }
+
+  // populate click listener to element with data-url
+  const urls = document.querySelectorAll("div[data-url]")
+  for (var i = 0; i < urls.length; i++) {
+    let url = urls[i]
+    url.addEventListener("click", (ev) => {
+      // @ts-ignore
+      if (ev.target.href || ev.path?.[1]?.href) return
+      // @ts-ignore
+      window.open(url.dataset.url, "_blank")
+    })
   }
 })
 </script>
