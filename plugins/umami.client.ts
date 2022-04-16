@@ -4,6 +4,7 @@ export default defineNuxtPlugin(() => {
   const moduleOptions = {
     websiteId: "501052f0-e062-493e-b20d-5106ba09d844",
     scriptUrl: "https://umami-zernonia.vercel.app/umami.js",
+    domains: "zernonia.com, www.zernonia.com",
   }
   const options = { ...moduleOptions }
 
