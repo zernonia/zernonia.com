@@ -8,14 +8,15 @@
   "devDependencies": {
     "@iconify/json": "^2.0.30",
     "@types/axios": "^0.14.0",
+    "nuxt": "^3.0.0-rc.1",
     "nuxt-windicss": "^2.2.2",
-    "nuxt3": "^3.0.0-27501460.04a72f8",
     "unplugin-icons": "^0.13.0"
   },
   "dependencies": {
     "@notionhq/client": "^0.4.13",
     "@supabase/supabase-js": "^1.30.2",
     "@vueuse/core": "^7.6.2",
-    "axios": "^0.25.0"
+    "axios": "^0.25.0",
+    "motion": "^10.7.2"
   }
 }
