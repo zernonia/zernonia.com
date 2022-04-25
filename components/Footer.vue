@@ -5,12 +5,22 @@ import IconDribbble from "~icons/feather/dribbble"
 import IconDevTo from "~icons/feather/edit"
 import { UmamiSession } from "@/interface"
 import { numberFormatter } from "@/functions"
+import { animate } from "motion"
+import { Motion } from "motion/vue"
 
 const data = ref<UmamiSession>({ count: 0 })
+const counterRef = ref()
 
 onMounted(async () => {
   const res = await $fetch<UmamiSession>("/api/umami")
   res ? (data.value = res) : ""
+  animate(
+    (progress) => (counterRef.value.innerHTML = numberFormatter(Math.round(progress * data.value.count)) + ` visitors`),
+    {
+      duration: 1.5,
+      easing: "ease-out",
+    }
+  )
 })
 </script>
 
@@ -34,7 +44,7 @@ onMounted(async () => {
     </div>
 
     <ClientOnly>
-      <p class="text-gray-300">{{ numberFormatter(data.count) }} visitors</p>
+      <p ref="counterRef" class="text-gray-300"></p>
     </ClientOnly>
   </footer>
 </template>
