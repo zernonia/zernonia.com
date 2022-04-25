@@ -40,7 +40,7 @@ setMeta("Fun Projects ⭐️ - Zernonia ")
           <img
             :src="project.image"
             :alt="project.name"
-            class="h-64 md:h-80 md:w-3/5 object-cover w-full h-auto rounded-2xl"
+            class="aspect-video md:w-3/5 object-cover w-full h-auto rounded-2xl"
           />
           <div class="mt-4 md:mt-0 md:w-2/5 md:ml-12 w-full">
             <h4 class="text-2xl md:text-4xl font-bold font-space mb-2 md:mb-4">{{ project.name }}</h4>

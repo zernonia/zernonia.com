@@ -39,15 +39,15 @@ setMeta("My Blog 📒 - Zernonia ")
         <h1 class="font-bold text-5xl md:text-7xl text-center font-space">Blog</h1>
         <div
           v-if="latestPost"
-          class="mt-6 md:mt-12 mb-8 md:mb-20 rounded-4xl p-4 md:p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
+          class="mt-6 md:mt-12 mb-8 md:mb-20 rounded-3xl p-4 md:p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
         >
           <NuxtLink :to="`/blog/${latestPost.slug}`">
             <img
-              class="rounded-2xl md:rounded-4xl aspect-video object-cover"
+              class="rounded-2xl md:rounded-3xl aspect-video object-cover"
               :src="latestPost.cover_image"
               :alt="latestPost.title"
             />
-            <div class="p-4 md:p-6">
+            <div class="py-4 md:py-6">
               <p class="text-sm text-warm-gray-400">{{ latestPost.readable_publish_date }}</p>
               <h3 class="font-bold text-2xl md:text-4xl font-space tracking-tight">{{ latestPost.title }}</h3>
               <p class="mt-4 md:text-xl">{{ latestPost.description }}</p>
@@ -60,16 +60,16 @@ setMeta("My Blog 📒 - Zernonia ")
         </div>
         <ul class="md:grid grid-cols-2 gap-6">
           <li
-            class="w-full mb-8 md:mb-12 rounded-4xl p-4 md:p-6 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
+            class="w-full mb-8 md:mb-12 rounded-3xl p-4 md:p-6 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
             v-for="post in otherPost"
           >
             <NuxtLink :to="`/blog/${post.slug}`">
               <img
-                class="w-full h-auto rounded-2xl md:rounded-3xl aspect-video object-cover"
+                class="w-full aspect-video rounded-xl md:rounded-2xl aspect-video object-cover"
                 :src="post.cover_image"
                 :alt="post.title"
               />
-              <div class="p-4 md:p-6 flex flex-col justify-between">
+              <div class="py-4 md:py-6 flex flex-col justify-between">
                 <div>
                   <p class="text-sm text-warm-gray-400">{{ post.readable_publish_date }}</p>
                   <h3 class="font-bold text-2xl font-space tracking-tight">{{ post.title }}</h3>
