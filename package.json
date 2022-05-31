@@ -3,12 +3,13 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "generate": "nuxi generate"
   },
   "devDependencies": {
     "@iconify/json": "^2.0.30",
     "@types/axios": "^0.14.0",
-    "nuxt": "^3.0.0-rc.1",
+    "nuxt": "^3.0.0-rc.3",
     "nuxt-windicss": "^2.2.2",
     "unplugin-icons": "^0.13.0"
   },
