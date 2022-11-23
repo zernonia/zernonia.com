@@ -1,10 +1,12 @@
 import { createClient } from "@supabase/supabase-js"
-import type { IncomingMessage, ServerResponse } from "http"
 
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
+const supabase = createClient(
+  process.env.SUPABASE_URL ?? "",
+  process.env.SUPABASE_ANON_KEY ?? ""
+)
 
 // Umami is hosted on Supabase/Vercel
-export default async (req: IncomingMessage, res: ServerResponse) => {
+export default defineEventHandler(async (event) => {
   let today = new Date().getTime()
   let nintyDaysAgo = new Date(today - 90 * 86400000).toUTCString()
   try {
@@ -19,7 +21,6 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
     }
     return { count }
   } catch (err) {
-    res.statusCode = 400
-    return err
+    return sendError(event, new Error(`${err}`))
   }
-}
+})

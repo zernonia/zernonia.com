@@ -1,15 +1,14 @@
-import axios from "axios"
-import type { IncomingMessage, ServerResponse } from "http"
 const token = process.env.GITHUB_TOKEN
 
-export default async (req: IncomingMessage, res: ServerResponse) => {
+export default defineEventHandler(async (event) => {
   return await repoD("zernonia")
-}
+})
 
 async function repoD(username: string) {
   var ghd = await BASICfetch(username)
   var repo_info = await ISF(username, Math.ceil(ghd.public_repos / 100))
-  var tiss = Number(await FIssues(username)) - Number(repo_info.total_opened_issues)
+  var tiss =
+    Number(await FIssues(username)) - Number(repo_info.total_opened_issues)
   if (tiss < 0) var tiss = 0
 
   return {
@@ -47,32 +46,28 @@ async function ISF(username: string, totalpage: number) {
 
 // Fetch Basic Details
 async function BASICfetch(username: string) {
-  return axios({
-    method: "get",
-    url: "https://api.github.com/users/" + username,
-    headers: { "User-Agent": "Tuhin", Authorization: "Bearer " + token },
+  return $fetch("https://api.github.com/users/" + username, {
+    headers: { Authorization: "Bearer " + token },
   })
-    .then(function (response) {
-      return response.data
-    })
-    .catch(function (error) {
-      return "Sorry that's an " + error
-    })
 }
 
 // Fetch Repo Page
 async function fetchRD(username: string, pageno: number) {
-  return axios({
-    method: "get",
-    url: "https://api.github.com/users/" + username + "/repos?per_page=100&page=" + pageno,
-    headers: { "User-Agent": "Tuhin", Authorization: "Bearer " + token },
-  })
-    .then(function (resp) {
+  return $fetch(
+    "https://api.github.com/users/" +
+      username +
+      "/repos?per_page=100&page=" +
+      pageno,
+    {
+      headers: { Authorization: "Bearer " + token },
+    }
+  )
+    .then(function (resp: any) {
       var tstars = 0
       var tforks = 0
       var toissues = 0
 
-      resp.data.filter(function (rt) {
+      resp.filter(function (rt) {
         tstars += rt.stargazers_count
         tforks += rt.forks_count
         toissues += rt.open_issues
@@ -90,34 +85,36 @@ async function fetchRD(username: string, pageno: number) {
 
 // Fetch Total Commit
 async function Fcommit(username: string) {
-  return axios({
-    method: "get",
-    url: "https://api.github.com/search/commits?per_page=1&q=author:" + username,
-    headers: {
-      Accept: "application/vnd.github.cloak-preview",
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + token,
-    },
-  })
-    .then(function (resco) {
-      return resco.data.total_count
+  return $fetch(
+    "https://api.github.com/search/commits?per_page=1&q=author:" + username,
+    {
+      headers: {
+        Accept: "application/vnd.github.cloak-preview",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    }
+  )
+    .then(function (resco: any) {
+      return resco.total_count
     })
     .catch(function (errorco) {
       return "Sorry that's an " + errorco
     })
 }
 async function FIssues(username: string) {
-  return axios({
-    method: "get",
-    url: "https://api.github.com/search/issues?per_page=1&q=author:" + username,
-    headers: {
-      Accept: "application/vnd.github.cloak-preview",
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + token,
-    },
-  })
+  return $fetch(
+    "https://api.github.com/search/issues?per_page=1&q=author:" + username,
+    {
+      headers: {
+        Accept: "application/vnd.github.cloak-preview",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    }
+  )
     .then(function (resis) {
-      return resis.data.total_count
+      return resis.total_count
     })
     .catch(function (erroris) {
       return "Sorry that's an " + erroris
