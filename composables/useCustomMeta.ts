@@ -4,7 +4,7 @@ export const useCustomMeta = () => {
   let defaultImage = "https://zernonia.com/og.png"
 
   const setMeta = (title: string, desc = defaultDesc, image = defaultImage) => {
-    useMeta({
+    useHead({
       title,
       meta: [
         { charset: "utf-8" },

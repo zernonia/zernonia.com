@@ -2,20 +2,15 @@
 import { DevTo } from "@/interface"
 import { store } from "@/store"
 
-const { data, pending, error } = useLazyAsyncData("blog", () => $fetch<DevTo>("/api/devto"))
+const { data, pending, error } = useLazyAsyncData("blog", () =>
+  $fetch<DevTo>("/api/devto")
+)
 const latestPost = computed(() => data.value?.data[0])
 const otherPost = computed(() => data.value?.data.slice(1))
 const tagList = computed(() => {
   let tags: string[] = []
   data.value?.data.forEach((post) => tags.push(...post.tag_list))
   return [...new Set(tags)]
-})
-
-definePageMeta({
-  pageTransition: {
-    name: "fade",
-    mode: "out-in",
-  },
 })
 
 watch(
@@ -33,10 +28,22 @@ setMeta("My Blog 📒 - Zernonia ")
 <template>
   <div class="w-full">
     <transition name="fade" mode="out-in">
-      <h1 v-if="!data?.data && !error" class="font-bold text-5xl md:text-7xl text-center font-space">Blog</h1>
-      <h1 v-else-if="error" class="font-bold text-5xl md:text-7xl text-center font-space">Error</h1>
+      <h1
+        v-if="!data?.data && !error"
+        class="font-bold text-5xl md:text-7xl text-center font-space"
+      >
+        Blog
+      </h1>
+      <h1
+        v-else-if="error"
+        class="font-bold text-5xl md:text-7xl text-center font-space"
+      >
+        Error
+      </h1>
       <div v-else>
-        <h1 class="font-bold text-5xl md:text-7xl text-center font-space">Blog</h1>
+        <h1 class="font-bold text-5xl md:text-7xl text-center font-space">
+          Blog
+        </h1>
         <div
           v-if="latestPost"
           class="mt-6 md:mt-12 mb-8 md:mb-20 rounded-3xl p-4 md:p-8 shadow-inset-white dark:shadow-none transform hover:scale-102 transition duration-300"
@@ -48,12 +55,20 @@ setMeta("My Blog 📒 - Zernonia ")
               :alt="latestPost.title"
             />
             <div class="py-4 md:py-6">
-              <p class="text-sm text-warm-gray-400">{{ latestPost.readable_publish_date }}</p>
-              <h3 class="font-bold text-2xl md:text-4xl font-space tracking-tight">{{ latestPost.title }}</h3>
+              <p class="text-sm text-warm-gray-400">
+                {{ latestPost.readable_publish_date }}
+              </p>
+              <h3
+                class="font-bold text-2xl md:text-4xl font-space tracking-tight"
+              >
+                {{ latestPost.title }}
+              </h3>
               <p class="mt-4 md:text-xl">{{ latestPost.description }}</p>
 
               <ul class="mt-4 flex flex-wrap flex-row">
-                <li class="tag mr-2" v-for="tag in latestPost.tag_list">#{{ tag }}</li>
+                <li class="tag mr-2" v-for="tag in latestPost.tag_list">
+                  #{{ tag }}
+                </li>
               </ul>
             </div>
           </NuxtLink>
@@ -71,12 +86,18 @@ setMeta("My Blog 📒 - Zernonia ")
               />
               <div class="py-4 md:py-6 flex flex-col justify-between">
                 <div>
-                  <p class="text-sm text-warm-gray-400">{{ post.readable_publish_date }}</p>
-                  <h3 class="font-bold text-2xl font-space tracking-tight">{{ post.title }}</h3>
+                  <p class="text-sm text-warm-gray-400">
+                    {{ post.readable_publish_date }}
+                  </p>
+                  <h3 class="font-bold text-2xl font-space tracking-tight">
+                    {{ post.title }}
+                  </h3>
                   <p class="mt-2">{{ post.description }}</p>
                 </div>
                 <ul class="mt-4 flex flex-wrap flex-row">
-                  <li class="tag mr-2" v-for="tag in post.tag_list">#{{ tag }}</li>
+                  <li class="tag mr-2" v-for="tag in post.tag_list">
+                    #{{ tag }}
+                  </li>
                 </ul>
               </div>
             </NuxtLink>
