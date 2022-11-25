@@ -18,10 +18,6 @@ export default defineNuxtConfig({
       mode: "out-in",
     },
   },
-  routeRules: {
-    "/": { static: true },
-    "/blog/**": { static: true },
-  },
   unocss: {
     // presets
     uno: true, // enabled `@unocss/preset-uno`

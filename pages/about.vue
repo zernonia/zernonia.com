@@ -13,7 +13,7 @@ setMeta("Wanna know more about me? ☺️ - Zernonia")
 <template>
   <section class="w-full flex flex-col items-center">
     <div
-      class="w-full max-w-screen-md px-6 sm:px-8 md:px-16 py-6 md:py-12 shadow-inset-white dark:shadow-none rounded-4xl flex flex-col items-center"
+      class="w-full max-w-screen-md px-6 sm:px-8 md:px-16 py-6 md:py-12 shadow-inset-white dark:shadow-none rounded-3xl flex flex-col items-center"
     >
       <h1
         class="font-bold text-5xl md:text-7xl text-center font-space tracking-tight"
@@ -26,7 +26,7 @@ setMeta("Wanna know more about me? ☺️ - Zernonia")
         Self-taught Frontend Developer <br />
       </h2>
       <div class="mt-12 flex flex-col items-center">
-        <img :src="Avatar" alt="Zernonia" class="rounded-4xl w-full max-w-96" />
+        <img :src="Avatar" alt="Zernonia" class="rounded-3xl w-full max-w-96" />
         <div class="info mt-12">
           <div>
             <h5>Basic</h5>
