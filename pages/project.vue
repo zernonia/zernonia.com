@@ -6,13 +6,6 @@ const { data, pending, error } = useLazyAsyncData("project", () =>
   $fetch<Project>("/api/notion")
 )
 
-definePageMeta({
-  pageTransition: {
-    name: "fade",
-    mode: "out-in",
-  },
-})
-
 watch(
   pending,
   (n) => {

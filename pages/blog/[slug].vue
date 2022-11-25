@@ -9,13 +9,6 @@ const { data, pending, error } = await useLazyAsyncData(
   () => $fetch<DevToPost>(`/api/devto/${route.params.slug}`)
 )
 
-definePageMeta({
-  pageTransition: {
-    name: "fade",
-    mode: "out-in",
-  },
-})
-
 const { setMeta } = useCustomMeta()
 watch(
   pending,
@@ -37,6 +30,7 @@ watch(
 watch(article, () => {
   // populate target _blank to all links
   let links = article.value?.getElementsByTagName("a")
+  if (!links?.length) return
   for (var i = 0; i < links.length; i++) {
     links[i].target = "_blank"
   }
@@ -133,7 +127,7 @@ watch(article, () => {
 }
 
 pre {
-  @apply bg-light-400 dark:bg-dark-700 !rounded-2xl overflow-x-auto;
+  @apply !bg-light-400 !dark:bg-dark-700 !rounded-2xl overflow-x-auto;
 }
 
 .ltag__twitter-tweet,

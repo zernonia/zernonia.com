@@ -1,11 +1,4 @@
 <script setup lang="ts">
-definePageMeta({
-  pageTransition: {
-    name: "fade",
-    mode: "out-in",
-  },
-})
-
 const { setMeta } = useCustomMeta()
 setMeta("Welcome to Zernonia 🤩")
 </script>

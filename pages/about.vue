@@ -6,13 +6,6 @@ const { data, pending } = useLazyAsyncData("github", () =>
   $fetch<Github>("/api/github")
 )
 
-definePageMeta({
-  pageTransition: {
-    name: "fade",
-    mode: "out-in",
-  },
-})
-
 const { setMeta } = useCustomMeta()
 setMeta("Wanna know more about me? ☺️ - Zernonia")
 </script>
@@ -60,7 +53,7 @@ setMeta("Wanna know more about me? ☺️ - Zernonia")
               </p>
             </div>
             <div class="mt-12 md:mt-0 md:ml-16 md:w-1/2">
-              <h5>Github Stats</h5>
+              <h5>GitHub Stats</h5>
               <ul>
                 <li class="flex mb-2 items-center">
                   <div class="i-feather-star text-gray-300 text-xl mr-2" />
