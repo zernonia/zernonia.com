@@ -34,17 +34,17 @@ useHead({
           addressLocality: "Kuala Lumpur",
           addressCountry: "MY",
         },
-        sameAs: [site.github, site.twitter],
+        sameAs: [site.github, site.linkedin, site.twitter],
       }),
     },
   ],
 })
 
 const facts = [
-  { label: "Location", value: "Kuala Lumpur, MY 🇲🇾" },
   { label: "Focus", value: "Vue · Nuxt · TypeScript" },
   { label: "Background", value: "BSc Actuarial Science" },
-  { label: "Elsewhere", value: "unovue.com", href: "https://github.com/unovue" },
+  { label: "Open source org", value: "unovue", href: "https://github.com/unovue" },
+  { label: "Connect", value: "in/zernonia", href: site.linkedin },
 ]
 </script>
 
@@ -124,16 +124,29 @@ const facts = [
 
     <!-- ============================ Stack strip ========================== -->
     <PageSection aria-label="Technology stack">
-      <ul
-        class="flex flex-wrap items-center gap-x-4 gap-y-2 px-5 py-5 sm:gap-x-6 sm:px-8 lg:px-12"
+      <div
+        class="marquee relative overflow-hidden py-5 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
       >
-        <template v-for="(tech, i) in stack" :key="tech">
-          <li v-if="i > 0" class="font-mono text-xs text-brand/60" aria-hidden="true">
-            +
-          </li>
-          <li class="eyebrow text-mute">{{ tech }}</li>
-        </template>
-      </ul>
+        <div class="marquee-track">
+          <ul
+            v-for="copy in 2"
+            :key="copy"
+            :aria-hidden="copy === 2 ? 'true' : undefined"
+            :class="copy === 2 ? 'marquee-copy' : ''"
+            class="flex items-center gap-x-6 pr-6"
+          >
+            <template v-for="tech in stack" :key="tech">
+              <li class="eyebrow whitespace-nowrap text-mute">{{ tech }}</li>
+              <li
+                class="font-mono text-xs text-brand/60"
+                aria-hidden="true"
+              >
+                +
+              </li>
+            </template>
+          </ul>
+        </div>
+      </div>
     </PageSection>
 
     <!-- ============================== About ============================= -->
@@ -179,26 +192,33 @@ const facts = [
             </p>
           </div>
 
-          <dl class="mt-12 grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2">
+          <div class="mt-12 grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2">
+            <WorldMap class="sm:col-span-2" />
             <div
               v-for="fact in facts"
               :key="fact.label"
-              class="bg-surface px-5 py-4"
+              class="group/fact bg-surface px-5 py-4 transition-colors duration-300 hover:bg-raised"
             >
-              <dt class="eyebrow">{{ fact.label }}</dt>
-              <dd class="mt-1.5 font-mono text-sm text-ink">
+              <p class="eyebrow">{{ fact.label }}</p>
+              <p class="mt-1.5 font-mono text-sm text-ink">
                 <a
                   v-if="fact.href"
                   :href="fact.href"
                   target="_blank"
                   rel="noopener"
-                  class="transition-colors hover:text-brand"
-                  >{{ fact.value }}</a
+                  class="inline-flex items-center gap-1.5 transition-colors hover:text-brand"
                 >
+                  {{ fact.value }}
+                  <Icon
+                    name="lucide:arrow-up-right"
+                    class="size-3 text-faint transition-all duration-300 group-hover/fact:translate-x-0.5 group-hover/fact:-translate-y-0.5 group-hover/fact:text-brand"
+                    aria-hidden="true"
+                  />
+                </a>
                 <template v-else>{{ fact.value }}</template>
-              </dd>
+              </p>
             </div>
-          </dl>
+          </div>
         </Reveal>
       </div>
     </PageSection>
@@ -231,8 +251,12 @@ const facts = [
               :href="site.github"
               target="_blank"
               rel="noopener"
-              class="group flex min-h-44 flex-col justify-between bg-surface p-6 transition-colors duration-300 hover:bg-raised sm:p-8"
+              class="group relative flex min-h-44 flex-col justify-between bg-surface p-6 transition-colors duration-300 hover:bg-raised sm:p-8"
             >
+              <span
+                class="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-brand transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none"
+                aria-hidden="true"
+              />
               <div class="flex items-baseline justify-between gap-4">
                 <p class="eyebrow">
                   <span class="text-brand">05</span>
@@ -287,6 +311,19 @@ const facts = [
             >
               <Icon name="lucide:mail" class="size-4" aria-hidden="true" />
               {{ site.email }}
+            </a>
+            <a
+              :href="site.linkedin"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex h-11 items-center gap-2 rounded-full border border-line-strong px-6 font-mono text-sm text-ink transition-colors hover:border-brand hover:text-brand"
+            >
+              <Icon
+                name="simple-icons:linkedin"
+                class="size-4"
+                aria-hidden="true"
+              />
+              LinkedIn
             </a>
             <a
               :href="site.twitter"

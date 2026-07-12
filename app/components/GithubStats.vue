@@ -19,6 +19,24 @@ function format(value: number | null) {
   return value === null ? "—" : formatter.format(value)
 }
 
+// Count up from zero once real values land, unless the user prefers
+// reduced motion — then values snap into place.
+function countUp(stat: Stat, target: number) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    stat.value = target
+    return
+  }
+  const duration = 900
+  const start = performance.now()
+  const tick = (now: number) => {
+    const t = Math.min((now - start) / duration, 1)
+    const eased = 1 - Math.pow(1 - t, 3)
+    stat.value = Math.round(target * eased)
+    if (t < 1) requestAnimationFrame(tick)
+  }
+  requestAnimationFrame(tick)
+}
+
 onMounted(async () => {
   try {
     const [repo, user] = await Promise.all([
@@ -29,9 +47,9 @@ onMounted(async () => {
         "https://api.github.com/users/zernonia"
       ),
     ])
-    stats.value[0]!.value = repo.stargazers_count
-    stats.value[1]!.value = user.followers
-    stats.value[2]!.value = user.public_repos
+    countUp(stats.value[0]!, repo.stargazers_count)
+    countUp(stats.value[1]!, user.followers)
+    countUp(stats.value[2]!, user.public_repos)
   } catch {
     // Rate-limited or offline — em dashes stay in place
   }
@@ -49,25 +67,9 @@ onMounted(async () => {
       <dd
         class="order-2 font-mono text-2xl font-medium tracking-tight tabular-nums sm:text-3xl"
       >
-        <Transition name="stat" mode="out-in">
-          <span :key="String(stat.value)">{{ format(stat.value) }}</span>
-        </Transition>
+        {{ format(stat.value) }}
       </dd>
       <dt class="eyebrow order-1">{{ stat.label }}</dt>
     </div>
   </dl>
 </template>
-
-<style scoped>
-.stat-enter-active {
-  transition: opacity 0.4s ease;
-}
-.stat-enter-from {
-  opacity: 0;
-}
-@media (prefers-reduced-motion: reduce) {
-  .stat-enter-active {
-    transition: none;
-  }
-}
-</style>

@@ -9,6 +9,10 @@ defineProps<{ project: Project; index: number }>()
     class="group relative flex flex-col bg-surface p-6 transition-colors duration-300 hover:bg-raised sm:p-8"
     :class="project.featured ? 'md:col-span-2' : ''"
   >
+    <span
+      class="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-brand transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none"
+      aria-hidden="true"
+    />
     <div class="flex items-baseline justify-between gap-4">
       <p class="eyebrow">
         <span class="text-brand">{{ String(index + 1).padStart(2, "0") }}</span>

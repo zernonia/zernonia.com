@@ -6,6 +6,7 @@ export const site = {
     "Self-taught frontend developer from Kuala Lumpur, Malaysia. Creator of Reka UI (formerly Radix Vue), core team at shadcn-vue, and builder of open-source tools for the Vue ecosystem.",
   email: "zernonia@gmail.com",
   github: "https://github.com/zernonia",
+  linkedin: "https://www.linkedin.com/in/zernonia/",
   twitter: "https://twitter.com/zernonia",
   twitterHandle: "@zernonia",
   location: "Kuala Lumpur, Malaysia",
@@ -74,6 +75,7 @@ export const stack = [
 
 export const socials = [
   { label: "GitHub", icon: "simple-icons:github", href: site.github },
+  { label: "LinkedIn", icon: "simple-icons:linkedin", href: site.linkedin },
   { label: "X (Twitter)", icon: "simple-icons:x", href: site.twitter },
   { label: "Email", icon: "lucide:mail", href: `mailto:${site.email}` },
 ]
