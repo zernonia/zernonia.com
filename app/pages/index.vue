@@ -29,11 +29,6 @@ useHead({
         email: `mailto:${site.email}`,
         jobTitle: "Engineering Manager",
         description: site.description,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Kuala Lumpur",
-          addressCountry: "MY",
-        },
         sameAs: [site.github, site.linkedin, site.twitter],
       }),
     },
@@ -74,7 +69,7 @@ const facts = [
           class="hero-in mt-8 max-w-xl leading-relaxed text-mute sm:text-lg"
           style="--hero-delay: 160ms"
         >
-          Engineering Manager from {{ site.location }} — creator of
+          Creator of
           <a
             href="https://reka-ui.com"
             target="_blank"

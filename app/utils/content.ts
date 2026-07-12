@@ -3,13 +3,12 @@ export const site = {
   url: "https://zernonia.com",
   title: "Zernonia — Engineering Manager & Open Source Maintainer",
   description:
-    "Engineering Manager and open-source maintainer from Kuala Lumpur, Malaysia. Creator of Reka UI (formerly Radix Vue), core team at shadcn-vue, and builder of open-source tools for the Vue ecosystem.",
+    "Engineering Manager and open-source maintainer. Creator of Reka UI (formerly Radix Vue), core team at shadcn-vue, and builder of open-source tools for the Vue ecosystem.",
   email: "zernonia@gmail.com",
   github: "https://github.com/zernonia",
   linkedin: "https://www.linkedin.com/in/zernonia/",
   twitter: "https://twitter.com/zernonia",
   twitterHandle: "@zernonia",
-  location: "Kuala Lumpur, Malaysia",
 }
 
 export interface Project {
