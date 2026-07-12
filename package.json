@@ -1,9 +1,10 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
     "build": "nuxt build",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "prepare": "nuxt prepare"
   },
@@ -13,22 +14,19 @@
     "semi": false,
     "singleQuote": false
   },
-  "devDependencies": {
-    "@iconify/json": "^2.0.30",
-    "@unocss/nuxt": "^0.45.6",
-    "@unocss/preset-icons": "^0.45.6",
-    "@unocss/preset-typography": "^0.45.8",
-    "@unocss/preset-uno": "^0.45.6",
-    "@unocss/preset-wind": "^0.46.5",
-    "@unocss/reset": "^0.45.6",
-    "@unocss/transformer-directives": "^0.45.6",
-    "nuxt": "^3.0.0",
-    "unplugin-icons": "^0.13.0"
-  },
   "dependencies": {
-    "@notionhq/client": "^0.4.13",
-    "@supabase/supabase-js": "^1.30.2",
-    "@vueuse/core": "^9.5.0",
-    "motion": "^10.7.2"
+    "@fontsource-variable/inter": "^5.2.5",
+    "@fontsource-variable/jetbrains-mono": "^5.2.5",
+    "nuxt": "^4.0.0",
+    "vue": "^3.5.17"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.57",
+    "@iconify-json/simple-icons": "^1.2.44",
+    "@nuxt/icon": "^1.15.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.7"
   }
 }

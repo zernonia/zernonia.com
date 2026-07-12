@@ -1,29 +1,28 @@
-# Nuxt 3 Minimal Starter
+# zernonia.com
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+Personal portfolio — built with [Nuxt 4](https://nuxt.com) and [Tailwind CSS v4](https://tailwindcss.com).
+
+Design language inspired by [viteplus.dev](https://viteplus.dev): dark canvas, hairline borders, golden accent, monospace labels.
 
 ## Setup
 
-Make sure to install the dependencies
-
 ```bash
-yarn install
+npm install
 ```
 
 ## Development
 
-Start the development server on http://localhost:3000
-
 ```bash
-yarn dev
+npm run dev
 ```
 
 ## Production
 
-Build the application for production:
-
 ```bash
-yarn build
+npm run build     # SSR build
+npm run generate  # fully static
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+## Editing content
+
+All copy, projects, and links live in [`app/utils/content.ts`](./app/utils/content.ts).

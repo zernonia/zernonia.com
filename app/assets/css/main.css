@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  Design tokens — dark canvas, hairline borders, golden accent      */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SF Mono", Menlo,
+    monospace;
+
+  /* Surfaces */
+  --color-canvas: #0a0a0b;
+  --color-surface: #0e0e10;
+  --color-raised: #141417;
+
+  /* Ink */
+  --color-ink: #f4f4f5;
+  --color-mute: #a5a5ae;
+  --color-faint: #6d6d76;
+
+  /* Hairlines */
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.16);
+
+  /* Accent — golden yellow */
+  --color-brand: #ffc517;
+  --color-brand-bright: #ffd44d;
+  --color-brand-dim: rgb(255 197 23 / 0.1);
+
+  --animate-caret: caret 1.2s steps(2, jump-none) infinite;
+
+  @keyframes caret {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                              */
+/* ------------------------------------------------------------------ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-brand);
+    color: var(--color-canvas);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Utilities                                                         */
+/* ------------------------------------------------------------------ */
+
+/* Mono uppercase label, e.g. section eyebrows and nav items */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.6;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+/* Subtle blueprint grid used behind the hero */
+@utility bg-blueprint {
+  background-image: linear-gradient(
+      to right,
+      rgb(255 255 255 / 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(
+    ellipse 90% 80% at 50% 0%,
+    black 30%,
+    transparent 75%
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Scroll reveal — CSS-first, only when JS is available,             */
+/*  disabled entirely for prefers-reduced-motion                      */
+/* ------------------------------------------------------------------ */
+
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hero entrance — pure CSS, transform/opacity only */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in {
+    animation: hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--hero-delay, 0ms);
+  }
+
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
