@@ -11,7 +11,7 @@ useSeoMeta({
   ogImage: `${site.url}/og.png`,
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogImageAlt: "Zernonia — Frontend Developer & Open Source Maintainer",
+  ogImageAlt: site.title,
   twitterCard: "summary_large_image",
   twitterCreator: site.twitterHandle,
 })
@@ -27,7 +27,7 @@ useHead({
         name: site.name,
         url: site.url,
         email: `mailto:${site.email}`,
-        jobTitle: "Frontend Developer",
+        jobTitle: "Engineering Manager",
         description: site.description,
         address: {
           "@type": "PostalAddress",
@@ -42,7 +42,7 @@ useHead({
 
 const facts = [
   { label: "Focus", value: "Vue · Nuxt · TypeScript" },
-  { label: "Background", value: "BSc Actuarial Science" },
+  { label: "Role", value: "Engineering Manager" },
   { label: "Open source org", value: "unovue", href: "https://github.com/unovue" },
   { label: "Connect", value: "in/zernonia", href: site.linkedin },
 ]
@@ -59,7 +59,7 @@ const facts = [
       >
         <p class="eyebrow hero-in">
           <span class="text-brand" aria-hidden="true">+</span>
-          Frontend Developer — Open Source Maintainer
+          Engineering Manager — Open Source Maintainer
         </p>
 
         <h1
@@ -74,7 +74,7 @@ const facts = [
           class="hero-in mt-8 max-w-xl leading-relaxed text-mute sm:text-lg"
           style="--hero-delay: 160ms"
         >
-          Self-taught developer from {{ site.location }} — creator of
+          Engineering Manager from {{ site.location }} — creator of
           <a
             href="https://reka-ui.com"
             target="_blank"
@@ -158,7 +158,7 @@ const facts = [
           <SectionHeading
             index="01"
             label="About"
-            title="Self-taught, curiosity-driven."
+            title="Manager by day, maintainer by night."
           />
           <img
             :src="avatar"
@@ -174,21 +174,21 @@ const facts = [
         <Reveal :delay="100">
           <div class="space-y-5 leading-relaxed text-mute">
             <p>
-              I hold a Bachelor's degree in Actuarial Science, but my passion
-              has always been programming. So I taught myself to code, went all
-              in on the web, and never looked back.
+              By day I'm an Engineering Manager — leading a team of engineers,
+              shaping architecture and engineering practice, and helping ship
+              products people actually enjoy using.
             </p>
             <p>
-              These days I spend most of my time in open source — building
-              accessible component primitives with
-              <span class="text-ink">Reka UI</span>, helping maintain
-              <span class="text-ink">shadcn-vue</span>, and shipping side
-              projects whenever a hackathon (or a random idea at 2am) comes
-              along.
+              The rest of my time goes into open source — building accessible
+              component primitives with <span class="text-ink">Reka UI</span>,
+              helping maintain <span class="text-ink">shadcn-vue</span>, and
+              shipping side projects whenever a hackathon (or a random idea at
+              2am) comes along.
             </p>
             <p>
-              I speak quite a number of languages — and not just the
-              programming kind. 😄
+              Managing hasn't taken the code out of me: I still review PRs,
+              prototype ideas, and hold far too many opinions about component
+              APIs.
             </p>
           </div>
 
