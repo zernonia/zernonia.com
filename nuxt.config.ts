@@ -35,6 +35,22 @@ export default defineNuxtConfig({
     },
   },
 
+  // Umami analytics — production builds only
+  $production: {
+    app: {
+      head: {
+        script: [
+          {
+            src: "https://umami-zernonia.vercel.app/script.js",
+            defer: true,
+            "data-website-id": "501052f0-e062-493e-b20d-5106ba09d844",
+            "data-domains": "zernonia.com,www.zernonia.com",
+          },
+        ],
+      },
+    },
+  },
+
   routeRules: {
     // Old site URLs — blog removed, pages merged into the single-page layout
     "/about": { redirect: { to: "/#about", statusCode: 301 } },
