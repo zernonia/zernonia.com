@@ -34,6 +34,8 @@ defineProps<{ project: Project; index: number }>()
         target="_blank"
         rel="noopener"
         class="after:absolute after:inset-0 after:content-['']"
+        data-umami-event="project-visit"
+        :data-umami-event-project="project.name"
       >
         {{ project.name }}
       </a>
@@ -58,6 +60,8 @@ defineProps<{ project: Project; index: number }>()
         target="_blank"
         rel="noopener"
         class="eyebrow relative z-10 flex items-center gap-1.5 transition-colors hover:text-brand"
+        data-umami-event="project-source"
+        :data-umami-event-project="project.name"
       >
         <Icon name="simple-icons:github" class="size-3.5" aria-hidden="true" />
         Source

@@ -93,6 +93,7 @@ const facts = [
           <a
             href="#projects"
             class="inline-flex h-11 items-center gap-2 rounded-full bg-brand px-6 font-mono text-sm font-medium text-canvas transition-colors hover:bg-brand-bright"
+            data-umami-event="cta-explore-projects"
           >
             Explore projects
             <Icon name="lucide:arrow-down" class="size-4" aria-hidden="true" />
@@ -102,6 +103,8 @@ const facts = [
             target="_blank"
             rel="noopener"
             class="inline-flex h-11 items-center gap-2 rounded-full border border-line-strong px-6 font-mono text-sm text-ink transition-colors hover:border-brand hover:text-brand"
+            data-umami-event="github-click"
+            data-umami-event-location="hero"
           >
             <Icon name="simple-icons:github" class="size-4" aria-hidden="true" />
             GitHub
@@ -202,6 +205,8 @@ const facts = [
                   target="_blank"
                   rel="noopener"
                   class="inline-flex items-center gap-1.5 transition-colors hover:text-brand"
+                  data-umami-event="fact-click"
+                  :data-umami-event-target="fact.value"
                 >
                   {{ fact.value }}
                   <Icon
@@ -247,6 +252,8 @@ const facts = [
               target="_blank"
               rel="noopener"
               class="group relative flex min-h-44 flex-col justify-between bg-surface p-6 transition-colors duration-300 hover:bg-raised sm:p-8"
+              data-umami-event="github-click"
+              data-umami-event-location="projects"
             >
               <span
                 class="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-brand transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none"
@@ -303,6 +310,7 @@ const facts = [
             <a
               :href="`mailto:${site.email}`"
               class="inline-flex h-11 items-center gap-2 rounded-full bg-brand px-6 font-mono text-sm font-medium text-canvas transition-colors hover:bg-brand-bright"
+              data-umami-event="contact-email"
             >
               <Icon name="lucide:mail" class="size-4" aria-hidden="true" />
               {{ site.email }}
@@ -312,6 +320,9 @@ const facts = [
               target="_blank"
               rel="noopener"
               class="inline-flex h-11 items-center gap-2 rounded-full border border-line-strong px-6 font-mono text-sm text-ink transition-colors hover:border-brand hover:text-brand"
+              data-umami-event="social-click"
+              data-umami-event-network="LinkedIn"
+              data-umami-event-location="contact"
             >
               <Icon
                 name="simple-icons:linkedin"
@@ -325,6 +336,9 @@ const facts = [
               target="_blank"
               rel="noopener"
               class="inline-flex h-11 items-center gap-2 rounded-full border border-line-strong px-6 font-mono text-sm text-ink transition-colors hover:border-brand hover:text-brand"
+              data-umami-event="social-click"
+              data-umami-event-network="X"
+              data-umami-event-location="contact"
             >
               <Icon name="simple-icons:x" class="size-3.5" aria-hidden="true" />
               Follow me

@@ -29,6 +29,8 @@ const links = [
           :key="link.href"
           :href="link.href"
           class="eyebrow hidden transition-colors hover:text-ink sm:block"
+          data-umami-event="nav-click"
+          :data-umami-event-target="link.label.toLowerCase()"
         >
           {{ link.label }}
         </a>
@@ -41,6 +43,8 @@ const links = [
           rel="noopener"
           class="text-mute transition-colors hover:text-ink"
           aria-label="Zernonia on GitHub"
+          data-umami-event="github-click"
+          data-umami-event-location="header"
         >
           <Icon name="simple-icons:github" class="size-4.5" />
         </a>

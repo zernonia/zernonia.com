@@ -35,15 +35,16 @@ export default defineNuxtConfig({
     },
   },
 
-  // Umami analytics — production builds only
+  // Umami analytics — production builds only; click events are tagged via
+  // data-umami-event attributes, which stay inert while this script is absent
   $production: {
     app: {
       head: {
         script: [
           {
-            src: "https://umami-zernonia.vercel.app/script.js",
+            src: "https://umami-zeta-one.vercel.app/script.js",
             defer: true,
-            "data-website-id": "501052f0-e062-493e-b20d-5106ba09d844",
+            "data-website-id": "b4e49202-4b8e-4068-93e3-1492727c3d53",
             "data-domains": "zernonia.com,www.zernonia.com",
           },
         ],
