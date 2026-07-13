@@ -39,6 +39,9 @@ const year = new Date().getFullYear()
             rel="noopener"
             :aria-label="social.label"
             class="text-faint transition-colors hover:text-ink"
+            data-umami-event="social-click"
+            :data-umami-event-network="social.label"
+            data-umami-event-location="footer"
           >
             <Icon :name="social.icon" class="size-4" />
           </a>
