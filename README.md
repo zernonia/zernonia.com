@@ -1,3 +1,5 @@
+
+
 # zernonia.com
 
 Personal portfolio — built with [Nuxt 4](https://nuxt.com) and [Tailwind CSS v4](https://tailwindcss.com).
@@ -21,6 +23,7 @@ npm run dev
 ```bash
 npm run build     # SSR build
 npm run generate  # fully static
+npm run preview   # locally preview production build
 ```
 
 ## Editing content
